@@ -10,6 +10,8 @@ exports.up = function(knex) {
   table.integer('looking_for');
   table.text('bio').defaultTo('');
   table.string('usr_name').notNullable().unique();
+  table.string('lat').notNullable().defaultTo('');
+  table.string('long').notNullable().defaultTo('')
   })
 };
 
