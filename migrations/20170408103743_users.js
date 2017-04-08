@@ -7,11 +7,13 @@ exports.up = function(knex) {
   table.string('email').notNullable().unique();
   table.specificType('hashed_password', 'char(60)').notNullable();
   table.integer('gender').notNullable();
-  table.integer('looking_for');
+  table.boolean('looking_for');
+  table.integer('interested_in');
   table.text('bio').defaultTo('');
   table.string('usr_name').notNullable().unique();
-  table.string('lat').notNullable().defaultTo('');
-  table.string('long').notNullable().defaultTo('')
+  table.float('lat').notNullable().defaultTo(40.0150);
+  table.float('long').notNullable().defaultTo(-105.2705);
+  table.text('photo');
   })
 };
 
