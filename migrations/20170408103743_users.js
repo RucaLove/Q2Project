@@ -7,6 +7,7 @@ exports.up = function(knex) {
   table.string('email').notNullable().unique();
   table.specificType('hashed_password', 'char(60)').notNullable();
   table.integer('gender').notNullable();
+  table.integer('age').notNullable();
   table.boolean('looking_for');
   table.integer('interested_in');
   table.text('bio').defaultTo('');
