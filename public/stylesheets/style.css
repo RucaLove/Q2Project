@@ -9,7 +9,9 @@ body {
   background: linear-gradient(to bottom right, #006AFF, cyan);
 }
 
-
+#beaker{
+  width: 12%;
+}
 
 h1{
  font-family: Comfortaa, cursive;
