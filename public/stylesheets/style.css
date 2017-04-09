@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
+  padding: 100px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(to bottom right, #006AFF, cyan);
+  background-repeat: no-repeat;
 }
 
-a {
-  color: #00B7FF;
+
+#grad1 {
+}
+
+h1{
+ font-family: Comfortaa, cursive;
+ font-size: 150px;
+}
+
+/*html {
+    background: linear-gradient(to bottom right, #006AFF, cyan);
 }
