@@ -7,6 +7,15 @@
 </head>
 
 <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=142942152904938";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
     <div id="index-banner" class="parallax-containern logo">
       <div class="section no-pad-bot">
@@ -19,16 +28,13 @@
           </h1>
           </div>
           <div class="row center">
-            <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-          </div>
-          <div class="row center">
-            <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-          </div>
+          <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+        </div>
+
           <br><br>
 
         </div>
       </div>
-      <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
     </div>
 
 
@@ -140,6 +146,7 @@
         Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
         </div>
       </div>
+
     </footer>
     <!-- <form>
         <div class="form-group">
