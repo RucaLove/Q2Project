@@ -5,12 +5,21 @@ const humps = require('humps')
 const boom = require('boom')
 
 
+router.get('/', function(req, res, next) {
+  res.render('user_personality');
+})
+
 router.get('/:id', (req, res, next) => {
   // this one needs to go into the DB to get the info
   // set a cookie with the user personality
   // this cookie also needs to say they are a new user
-  //
-  res.render('personalities', {yourPersonality: personality})
+  knex('user_personality')
+    .orderBy('id', req.params.id)
+    .then((personality) => {
+      res.send(humps.camelizeKeys(personality[0]));
+      console.log('HAY', personality);
+    })
+  res.render('user_personality')
 })
 
 // can the transition button be static? or does it need to post?
