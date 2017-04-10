@@ -23,17 +23,21 @@ router.get('/', (req, res, next) => {
   // res.render('matches')
 })
 
-// this one is for viewing a single matches profile
-router.get('/:id', (req, res, next) => {
-  
-  // each match name needs to be rendered with an id in hbs
-  // can get that info with an event listener
-
-  res.redirect(`/users/${id}`)
-})
+// NOTE: this is being skipped because an href tag is directing to it in the matches view
+// // this one is for viewing a single matches profile
+// router.get('/:id', (req, res, next) => {
+//
+//   // each match name needs to be rendered with an id in hbs
+//   // can get that info with an event listener
+//
+//   res.redirect(`/users/${id}`)
+// })
 
 // can this be an AJAX post request from the check-mark button to here?
-router.post('/:id', (req, res, next) => {
+router.post('/', (req, res, next) => {
+  console.log(req.body);
+  res.json(true)
+
   // put chosen match in user_saved_matches table
   // get the user_id from the cookie
   // get the match_id from the request body
