@@ -15,3 +15,5 @@ router.get('/:id', (req, res, next) => {
 
 // can the transition button be static? or does it need to post?
 // we are only setting a cookie
+
+ module.exports = router
