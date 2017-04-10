@@ -139,7 +139,6 @@ describe('GET /users/:id', () => {
 describe('POST /users/:id', () => {
   let newUser = {
     user: {
-      id: 3,
       first_name: 'Megan',
       last_name: 'Gross',
       email: '144.mdgross@gmail.com',

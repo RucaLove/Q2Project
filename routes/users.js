@@ -4,16 +4,16 @@ var router = express.Router();
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('browse');
 });
 
 router.get('/:id', (req, res, next) => {
   // for viewing users and a patch to editing
-  knex
   // you can for now always see anyone's profile
 
   // if profile id number matches cookie id number
   // display buttons for edit
+  res.end()
 })
 
 router.post('/:id', (req, res, next) => {
@@ -24,17 +24,19 @@ router.post('/:id', (req, res, next) => {
   // we need to delete the newUSer cookie so they can only make one
 
   // if no cookie-res.render users-browsing view
+    res.render()
 })
 
 router.put('/', (req, res, next) => {
   // if user has correct cookie allow them to PUT
+    res.end()
 
 })
 
 router.delete('/:id', (req, res, next) => {
   // check for matching cookie id again
   // allow them to delete
-
+  res.end()
 })
 
 
