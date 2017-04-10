@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var http = require('http')
-var bodyParser = require('body-parser')
+
+var knex = require('../knex')
 
 
 /* GET home page. */
@@ -12,12 +12,21 @@ router.get('/', function(req, res, next) {
 
 // login with Oauth
 router.post('/', (req, res, next) => {
-  console.log(req.body);
-  
+  // console.log(req.body);
 
-  // set cookie here
+  knex('users')
+    .where('email', req.body.email)
+    .then(function(user){
+      if (!user[0]) {
+        // set cookie here
+        res.cookie('newUser', {email: req.body.email, token: req.body.token}, {httpOnly:true})
+        res.json(true)
+      }
+    })
+
+
   // Oauth
-  res.redirect('/matches')
+  // res.redirect('/matches')
 })
 
 // NOTE:SEE IF THIS ONE CAN JUST BE AN HERF LINK W/N THE HTML

@@ -81,24 +81,20 @@
                   console.log(accessToken);
                   console.log('Successful login for: ' + response.name);
 
+                  // ajax sends our facebook login data to a POST request on our index route
                   $.ajax({
                     method:'POST',
                     url:'/',
-                    data:{accessToken, response.email},
-                    contentType:'application/json'
-                    username: response.name
+                    dataType: 'json',
+                    data:{token: accessToken, email: response.email, username: response.name},
+                    success: function(data) {
+                      console.log(data);
+                      window.location.assign('/test')
+                    },
+                    fail: function(err) {
+                      console.log(err);
+                    }
                   })
-                  .done(function(){
-                   window.location.assign("/user_profile.hbs")
-                  })
-                  .fail(function(){
-
-                  })
-
-                  // I have no idea how to make the Ajax call here or why I need to make it
-
-
-
 
                   document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
                 });
