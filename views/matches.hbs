@@ -34,12 +34,12 @@
         <div class="">
             <table>
                 <tbody>
-                  {{#each matches}}
+                  {{#each match}}
                   <tr>
-                      <td class="delete" data-id="{{this.match_id}}">X</td>
-                      <td>Kelly</td>
-                      <td>ENTJ</td>
-                      <td><img class="profile" height="100px" width="100px" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png" </td>
+                      <td class="delete" data-id="{{this.matchId}}">X</td>
+                      <td><p>{{this.firstName}} {{this.lastName}}</p></td>
+                      <td><p>{{this.personality}}</p></td>
+                      <td><a href="/users/{{this.matchId}}"><img class="profile" height="100px" width="100px" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
                   </tr>
                   {{/each}}
                 </tbody>
