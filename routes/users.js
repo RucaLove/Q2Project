@@ -9,6 +9,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/:id', (req, res, next) => {
   // for viewing users and a patch to editing
+  knex
   // you can for now always see anyone's profile
 
   // if profile id number matches cookie id number
