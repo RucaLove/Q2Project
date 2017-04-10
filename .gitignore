@@ -3,3 +3,4 @@ node_modules
 .SWAP
 .SWO
 .SWP
+.DS_Store
