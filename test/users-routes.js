@@ -4,7 +4,6 @@ const request = require('supertest');
 const expect = require('chai').expect;
 const app = require('../app');
 const knex = require('../knex');
-// const browse = require('../routes/browse')
 
 beforeEach(done => {
   Promise.all([
@@ -47,18 +46,17 @@ afterEach(done => {
   knex('users').del().then(() => done())
 });
 
-// i think browse should change to users or equivalent word
-describe('GET /browse', () => {
-  it('responds with JSON', done => {
+describe('GET /users', () => {
+  it('renders then page when a get request happens', done => {
     request(app)
-      .get('/browse')
-      .expect('Content-Type', /json/)
+      .get('/users')
+      .expect('Content-Type', /html/)
       .expect(200, done);
   });
 
   it('returns an array of all users when responding with JSON', done => {
     request(app)
-      .get('/browse')
+      .get('/users')
       .end((err, res) => {
         expect(res.body).to.deep.equal([{
             id: 1,
@@ -98,19 +96,19 @@ describe('GET /browse', () => {
 }); // end of describe block
 
 
-describe('GET /browse/:id', () => {
-  it('responds with JSON', done => {
+describe('GET /users/:id', () => {
+  it('responds with a rendered page', done => {
     request(app)
-      .get('/browse/:id')
-      .expect('Content-Type', /json/)
+      .get('/users/:id')
+      .expect('Content-Type', /html/)
       .expect(200, done);
   });
 
-  it('returns an array of all users when responding with JSON', done => {
+  it('returns an OBJECT matching the requested user', done => {
     request(app)
-      .get('/browse/2')
+      .get('/users/2')
       .end((err, res) => {
-        expect(res.body).to.deep.equal([{
+        expect(res.body).to.deep.equal({
           id: 2,
           first_name: 'Haley',
           last_name: 'Kalb',
@@ -125,22 +123,20 @@ describe('GET /browse/:id', () => {
           lat: 40.0228514,
           long: -105.2544565,
           photo: 'https://www.facebook.com/photo.php?fbid=10103928666203455&set=a.806490888855.2461131.22426940&type=3&theater'
-        }]) // end of expect
+        }) // end of expect
       }) // end of end
   }) // end of it
 
   // if this isn't working switch Content-Type to text/plain
   it('returns a 404 error when it is given a request with no matching id', done => {
     request(app)
-      .get('/browse/99')
-      .expect('Content-Type', /json/)
-      .expect(404, done);
+      .get('/users/99')
+      .expect('Content-Type', /plain/)
+      .expect(404, 'select valid user id', done);
   }) // end of it
 }); // end of describe block
 
-//I almost feel like this and browse should be routed to users and users/:id
-// we're working wiht the users table so i think this should reflect that
-describe('POST /profile/:id', () => {
+describe('POST /users/:id', () => {
   let newUser = {
     user: {
       id: 3,
@@ -169,7 +165,7 @@ describe('POST /profile/:id', () => {
       .expect(200, done)
   })
 
-  it('add the new user to the database', done => {
+  it('adds the new user to the database', done => {
     request(app)
       .post('/profile/:id')
       .type('form')
@@ -184,7 +180,6 @@ describe('POST /profile/:id', () => {
   })
 })
 
-// I'm swtiching to users. I'm getting confused otherwise
 describe('PUT /users/:id', () => {
   let updatedUser = {
     user: {
