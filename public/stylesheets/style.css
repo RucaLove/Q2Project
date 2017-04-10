@@ -7,7 +7,7 @@ body {
 }
 
 .pad{
-  padding-top: 50px
+  padding-top: 25%
 }
 
 .facebook_button {
@@ -35,16 +35,37 @@ h1 {
     color: rgba(255, 255, 255, 1);
     /*color: #fff;
     text-shadow: 0.5px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;*/
-    padding-top: 80px;
+    padding-top: 20px;
+}
+
+.what{
+  padding-top: 10%;
+}
+
+h2{
+  font-family: 'Roboto', sans-serif;
+}
+
+h3{
+  font-family: 'Roboto', sans-serif;
+}
+
+h4{
+  font-family: 'Roboto', sans-serif;
+}
+
+h5{
+  font-family: 'Roboto', sans-serif;
+}
+
+h6{
+  font-family: 'Roboto', sans-serif;
 }
 
 p {
     line-height: 2rem;
+    font-family: 'Roboto', sans-serif;
 }
-
-/*.button-collapse {
-    color: #26a69a;
-}*/
 
 .parallax-container {
     min-height: 380px;
