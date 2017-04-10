@@ -4,10 +4,14 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Chemistri' });
+
+
 })
 
 // login with Oauth
 router.post('/facebook', (req, res, next) => {
+
+
   // set cookie here
   // Oauth
   res.redirect('/matches')

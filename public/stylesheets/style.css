@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 /*style.css*/
-=======
+
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     /*background: linear-gradient(to bottom right, #006AFF, cyan);*/
@@ -8,7 +8,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
 }
->>>>>>> a8e7ce9d0744616d7e5681bd8b496c3e47b97a9c
+
 
 .pad{
   padding-top: 25%
