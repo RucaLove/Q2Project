@@ -14,3 +14,6 @@ router.post('/', (req, res, next) => {
 
   res.redirect('/personalities/:id')
 })
+
+ module.exports = router
+ 

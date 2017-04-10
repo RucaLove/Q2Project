@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
+// read all users
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
@@ -20,6 +21,8 @@ router.post('/:id', (req, res, next) => {
 
   // after they create the profile successfully
   // we need to delete the newUSer cookie so they can only make one
+
+  // if no cookie-res.render users-browsing view
 })
 
 router.put('/', (req, res, next) => {

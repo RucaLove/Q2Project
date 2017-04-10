@@ -5,6 +5,16 @@ const knex = require('../knex')
 // this one is to render the whole matches page
 router.get('/', (req, res, next) => {
 
+  // will need to check for a cookie to get the userID here
+  // for now I'm getting from 1
+  knex('user_saved_matches')
+  .where('user_id', 1)
+  .then(match => {
+
+  })
+  // go into the database to render people
+  // go into user_saved_matches
+  // do we want to do both db here?
   // confirm match view has correct name
   res.render('matches')
 })
@@ -22,7 +32,14 @@ router.post('/:id', (req, res, next) => {
   // put chosen match in user_saved_matches table
   // get the user_id from the cookie
   // get the match_id from the request body
-
-
+  // NOTE: this post needs to come from the users/:id page with a post request/action to matches/:id
+  // that way we can tell the difference between updating a profile and saving a match.
 
 })
+
+router.delete('/:id', (req, res, next) => {
+  // let people delete users from matching
+
+})
+
+ module.exports = router
