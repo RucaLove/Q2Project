@@ -6,14 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 })
 
-
-// login without Oauth
-router.post('/login', (req, res, next) => {
-  // set cookie here
-  // the name of object can be changed
-  res.redirect('/matches')
-})
-
 // login with Oauth
 router.post('/facebook', (req, res, next) => {
   // set cookie here
