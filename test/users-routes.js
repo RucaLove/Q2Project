@@ -47,10 +47,10 @@ afterEach(done => {
 });
 
 describe('GET /users', () => {
-  it('responds with JSON', done => {
+  it('renders then page when a get request happens', done => {
     request(app)
       .get('/users')
-      .expect('Content-Type', /json/)
+      .expect('Content-Type', /html/)
       .expect(200, done);
   });
 
