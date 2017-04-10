@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
   knex('user_saved_matches')
   .where('user_id', 1)
   .then(match => {
-    
+
   })
   // go into the database to render people
   // go into user_saved_matches
@@ -41,3 +41,5 @@ router.delete('/:id', (req, res, next) => {
   // let people delete users from matching
 
 })
+
+ module.exports = router
