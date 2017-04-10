@@ -33,3 +33,5 @@ router.delete('/:id', (req, res, next) => {
   // let people delete users from matching
 
 })
+
+module.exports = router;
