@@ -1,16 +1,19 @@
 var express = require('express');
 var router = express.Router();
+var http = require('http')
+var bodyParser = require('body-parser')
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Chemistri' });
 
-
 })
 
 // login with Oauth
-router.post('/facebook', (req, res, next) => {
-
+router.post('/', (req, res, next) => {
+  console.log(req.body);
+  
 
   // set cookie here
   // Oauth
