@@ -11,7 +11,7 @@ beforeEach(done => {
       user_id: 1,
       match_id: 2
     }),
-    knex('users').insert({
+    knex('user_saved_matches').insert({
       user_id: 2,
       match_id: 1
     })
@@ -27,7 +27,7 @@ afterEach(done => {
 describe('GET /matches', () => {
   it('responds with a rendered page of all saved matches', done => {
     request(app)
-      .get('/matches/:id')
+      .get('/matches/1')
       .expect('Content-Type', /html/)
       .expect(200, done);
   });
@@ -49,7 +49,7 @@ describe('GET /matches', () => {
 describe('GET /matches/:id', () => {
   it('redirects to the users/:id profile', done => {
     request(app)
-      .get('/matches/:id')
+      .get('/matches/1')
       .expect(302, done);
   });
 });
