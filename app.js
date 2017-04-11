@@ -40,6 +40,32 @@ app.use(function(req, res, next) {
   next(err);
 });
 
+//cookie validation
+function loggedIn(req, res, next){
+  if (!req.cookies) {
+return next(boom.create(401, 'You are not logged in or your session has expired.  Please log in and try again.'));
+  }else {
+    //ececute code to do
+    res.send(200)
+  }
+}
+
+//cookie match to allow user to post or edit
+function userValidation(req, res, next){
+  console.log(req.cookies)
+  // if (req.cookie ===) {
+  //
+  // }else {
+  //
+  // }
+}
+
+//allow user to post
+function cookieMatch(req, res, next){
+
+}
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
