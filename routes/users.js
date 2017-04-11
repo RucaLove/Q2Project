@@ -7,10 +7,17 @@ const humps = require('humps')
 router.get('/', function(req, res, next) {
   // we still need to render their user_id somewhere on the page
   knex('users')
-.then((user) =>{
-  console.log(user);
-    res.render('browse', {id: user.id, age: user.age, });
-})
+  .join('user_personality', 'users.id', 'user_personality.user_id')
+    .then((user) => {
+      console.log(user);
+      res.render('browse', {
+        id: user[1].id,
+        age: user[1].age,
+        username: user[1].usr_name,
+        photo: user[1].photo,
+        personality: user[1].personality
+      });
+    })
 
 });
 
@@ -18,13 +25,17 @@ router.get('/:id', (req, res, next) => {
   let id = +req.params.id
 
   knex('users')
-  .where('id', id)
-  .then(user => {
-    console.log(user);
-    let userHumps = humps.camelizeKeys(user[0])
+    .where('id', id)
+    .then(user => {
+      console.log(user);
+      let userHumps = humps.camelizeKeys(user[0])
 
-      res.render('detail_view', {id: userHumps.id, age: userHumps.age})
-  })
+      res.render('detail_view', {
+        id: userHumps.id,
+        age: userHumps.age,
+        bio: userHumps.bio
+      })
+    })
   // for viewing users and a patch to editing
   // you can for now always see anyone's profile
 
@@ -35,7 +46,7 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/:id', (req, res, next) => {
 
-  
+
   // check for matching cookie id and new user cookie
   // if they have both let them create a profile
 
