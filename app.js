@@ -9,7 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var result = require('./routes/result')
 const matches = require('./routes/matches')
-const personalities = require('./routes/profile')
+const profile = require('./routes/profile')
 const test = require('./routes/personality-test')
 const message = require('./routes/message')
 
