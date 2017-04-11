@@ -58,13 +58,26 @@
           <div class="section">
               <div class="row center">
                 <form class="submit" action="index.html" method="post">
-                  <button type="submit" name="button" class="btn btn-default profile"><a href="/result/1">Done</button>
+            <!-- Done will POST via ''/test' adding 'result' to 'newUser' cookie -->
+                  <button type="submit" name="button" class="btn btn-default profile"><a href="/test" method="POST">Done</button>
                 </form>
               </div>
           </div>
       </div>
 
     </main>
+    <script type="text/javascript">
+        $.ajax({
+          method: 'POST',
+          url: '/',
+          dataType: 'json',
+          data: {}
+
+
+        })
+
+        // redirect to the 'result.hbs' page render result with '/result' route GET
+    </script>
 </body>
 
 </html>
