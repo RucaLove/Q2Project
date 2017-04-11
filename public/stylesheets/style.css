@@ -12,6 +12,15 @@ body {
   background: inherit;
 }
 
+nav {
+  background-color: inherit;
+}
+
+.hamburger{
+  color: whitesmoke;
+  font-size: 3em;
+}
+
 main {
   background: inherit;
   height: 100%;
