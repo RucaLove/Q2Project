@@ -9,7 +9,7 @@ const knex = require('../knex');
 describe('GET /personalities/:id', () => {
   it('responds with a rendered page', done => {
     request(app)
-      .get('/personalities/:id')
+      .get('/personalities/1')
       .expect('Content-Type', /html/)
       .expect(200, done);
   })
