@@ -5,6 +5,8 @@ const humps = require('humps')
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
+  res.render('about')
+
   let count = 0
 
 
