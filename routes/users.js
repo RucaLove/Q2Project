@@ -5,6 +5,10 @@ const humps = require('humps')
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
+  let count = 0
+
+
+
   // we still need to render their user_id somewhere on the page
   knex('users')
   .join('user_personality', 'users.id', 'user_personality.user_id')
@@ -25,15 +29,19 @@ router.get('/:id', (req, res, next) => {
   let id = +req.params.id
 
   knex('users')
-    .where('id', id)
+  .join('user_personality', 'users.id', 'user_personality.user_id')
+    .where('users.id', id)
     .then(user => {
       console.log(user);
       let userHumps = humps.camelizeKeys(user[0])
 
       res.render('detail_view', {
         id: userHumps.id,
+        username: userHumps.usrName,
+        photo: userHumps.photo,
         age: userHumps.age,
-        bio: userHumps.bio
+        bio: userHumps.bio,
+        personality: userHumps.personality
       })
     })
   // for viewing users and a patch to editing
