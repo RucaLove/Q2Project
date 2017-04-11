@@ -10,7 +10,7 @@ var users = require('./routes/users');
 var result = require('./routes/result')
 const matches = require('./routes/matches')
 const profile = require('./routes/profile')
-const test = require('./routes/personality-test')
+const test = require('./routes/test')
 const message = require('./routes/message')
 
 var app = express();

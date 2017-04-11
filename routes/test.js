@@ -7,7 +7,7 @@ const boom = require('boom')
 
 
 router.get('/', function(req, res, next){
-  // render questions and answers on test.hbs
+res.render('test');
 
 })
 
@@ -20,3 +20,5 @@ router.post('/', function(req, res, next){
     //res.cookie('')
 
 })
+
+module.exports = router;
