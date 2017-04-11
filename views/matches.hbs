@@ -25,27 +25,27 @@
 
 <body>
     <main>
-        <h1>matches</h1>
+        <h1 class="matches center">your matches</h1>
 
         <!-- this is the container for the top side-scroll through names -->
         <div class="">
 
         </div>
-        <div class="">
+        <div class="container">
             <table>
                 <tbody>
                   {{#each match}}
                   <tr>
-                      <td class="delete" data-id="{{this.matchId}}">X</td>
+                      <td data-id="{{this.matchId}}"><i class="material-icons delete">clear</i></td>
                       <td><p>{{this.firstName}} {{this.lastName}}</p></td>
                       <td><p>{{this.personality}}</p></td>
-                      <td><a href="/users/{{this.matchId}}"><img class="profile" height="100px" width="100px" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
+                      <td><a href="/users/{{this.matchId}}"><img class="profile match-img" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
                   </tr>
                   {{/each}}
                 </tbody>
             </table>
             <!-- NOTE remember to change to users view in the browse link -->
-            <a class="waves-effect waves-light btn" href="/users">browse</a>
+            <a class="waves-effect waves-light btn" id="matches-button" href="/users">browse</a>
         </div>
     </main>
 </body>
