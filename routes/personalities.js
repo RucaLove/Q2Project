@@ -26,10 +26,17 @@ router.get('/:id', (req, res, next) => {
   .where('users.id', id)
   .then(user => {
     console.log(user);
+    //not currently rendering age
       res.render('profile_view', {age: user[0].age, bio: user[0].bio, photos: user[0].photos, personality: user[0].personality})
   })
 
-
+// router.post('/', (req, res, next) => {
+//   knex('users')
+//   .insert {
+//     .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
+//   }
+//   knex('user_personality')
+// })
 
 
   // PROBABLY DON'T NEED THIS
