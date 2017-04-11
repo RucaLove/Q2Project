@@ -5,6 +5,7 @@ const humps = require('humps')
 
 // this one is to render the whole matches page
 router.get('/', (req, res, next) => {
+  
   // will need to check for a cookie to get the userID here
   // for now I'm getting from 1
   knex('user_saved_matches')
