@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('about')
 });
 
 router.get('/:id', (req, res, next) => {
