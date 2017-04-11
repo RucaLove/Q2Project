@@ -16,6 +16,7 @@ let matchId = +$('#saveMatch').attr('data-id')
     dataType: 'json',
     data: {matchId: matchId},
     success: match => {
+      window.location.assign('/users')
       console.log(match);
     },
     fail: error => {
@@ -24,16 +25,6 @@ let matchId = +$('#saveMatch').attr('data-id')
   })
 
 })
-
-$('#deleteMatch').click(e => {
-  console.log('you clicked me');
-
-})
-
-
-
-
-
 
 
 })
