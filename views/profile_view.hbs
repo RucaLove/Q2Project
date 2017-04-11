@@ -48,12 +48,6 @@
         $('.carousel').carousel('set', 4);
     </script>
 
-    <script>
-      $(document).ready(function() {
-        $('select').material_select();
-      });
-    </script>
-
     <div class="container">
         <div class="section">
 
@@ -61,7 +55,6 @@
                     <h1 class="text-center blue-text">
                       Chemistri
                     </h1>
-                    <h6>Please fill in your profile</h6>
                 </div>
         </div>
     </div>
@@ -73,6 +66,9 @@
                 <div class="col s12 center">
                     <!-- <h3><i class="mdi-content-send brown-text"></i></h3> -->
                     <h4>Upload Some Photos</h4>
+                    <div class="photo">
+                      <img src="{{photos}}" alt="profile-pic">
+                    </div>
                     <form class="photo" action="index.html" method="post">
                         <!-- <div class="carousel">
                             <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/250/250/nature/1"></a>
@@ -88,8 +84,6 @@
         </div>
     </div>
 
-
-
     <div class="container">
         <div class="section">
 
@@ -97,24 +91,18 @@
             <div class="row center">
                 <div class="col s12 m6">
                     <div class="icon-block">
-                        <h5 class="center">User Name</h5>
+                        <h5 class="center">Age</h5>
                         <form action="/action_page.php">
-                          <input type="text" name="usr_name">
+                          <input type="number" id="editAge" name="quantity"
+                           min="0" max="110" step="1" value="{{age}}">
                         <!-- </form> -->
                     </div>
                 </div>
 
                 <div class="col s12 m6">
                     <div class="icon-block">
-                      <div class="input-field col s12">
-                        <select>
-                          <option value="" disabled selected>Choose your option</option>
-                          <option value="1">Man</option>
-                          <option value="2">Woman</option>
-                          <!-- <option value="3">Option 3</option> -->
-                        </select>
-                        <label>Gender</label>
-                      </div>
+                        <h5 class="center personality">Personality</h5>
+                        <p class="light">{{personality}}</p>
                     </div>
                 </div>
             </div>
@@ -123,38 +111,12 @@
     </div>
 
 
-        <div class="container">
-            <div class="section">
-
-                <!--   Icon Section   -->
-                <div class="row center">
-                    <div class="col s12 m6">
-                        <div class="icon-block">
-                            <h5 class="center">Age</h5>
-                            <form action="/action_page.php">
-                              <input type="number" name="quantity"
-                               min="0" max="100" step="1">
-                            <!-- </form> -->
-                        </div>
-                    </div>
-
-                    <div class="col s12 m6">
-                        <div class="icon-block">
-                            <h5 class="center personality">Personality</h5>
-                            <p class="light">{{personality}}</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
     <div class="container">
         <div class="section">
                 <div class="row center">
                     <h5 class="header col s12">Bio</h5>
                     <!-- <form> -->
-                      <input type="text" name="bio">
+                      <input type="text" id="editBio" name="bio" placeholder="{{bio}}">
                     <!-- </form> -->
                 </div>
             </div>
@@ -164,7 +126,7 @@
             <div class="section">
                 <div class="row center">
                   <!-- <form class="submit" action="index.html" method="post"> -->
-                    <button type="submit" name="button" class="btn btn-default"><a href="/personalities/1">Done</button>
+                    <a class="waves-effect waves-light btn" id="editProfile">edit</a>
                   </form>
                 </div>
             </div>

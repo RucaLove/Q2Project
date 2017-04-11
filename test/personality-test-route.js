@@ -12,7 +12,11 @@ describe('GET /test', () => {
       .expect('Content-Type', /html/)
       .expect(200, done);
   });
+<<<<<<< HEAD
+});
+=======
 })
+>>>>>>> d275de6176114b609186d1c77334c290b03ec964
 
 describe('POST /test', () => {
   it('redirects to the personalities/:id page', done => {

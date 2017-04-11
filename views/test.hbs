@@ -24,29 +24,46 @@
 </head>
 
 <body>
+
     <main>
-        <h1>matches</h1>
 
-        <!-- this is the container for the top side-scroll through names -->
-        <div class="">
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <h1>Take the Meyers Briggs Personality Test</h1>
+              </div>
+          </div>
+      </div>
 
-        </div>
-        <div class="">
-            <table>
-                <tbody>
-                  {{#each match}}
-                  <tr>
-                      <td class="delete" data-id="{{this.matchId}}">X</td>
-                      <td><p>{{this.firstName}} {{this.lastName}}</p></td>
-                      <td><p>{{this.personality}}</p></td>
-                      <td><a href="/users/{{this.matchId}}"><img class="profile" height="100px" width="100px" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-            </table>
-            <!-- NOTE remember to change to users view in the browse link -->
-            <a class="waves-effect waves-light btn" href="/users">browse</a>
-        </div>
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <p>Question 1/50</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <form class="" action="index.html" method="post">
+                  <button type="radio" name="button">One</button>
+                  <button type="radio" name="button">Two</button>
+                </form>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <form class="submit" action="index.html" method="post">
+                  <button type="submit" name="button" class="btn btn-default profile"><a href="/result/1">Done</button>
+                </form>
+              </div>
+          </div>
+      </div>
+
     </main>
 </body>
 

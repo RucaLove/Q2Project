@@ -16,3 +16,5 @@ describe('GET /', () => {
 })
 
 // how to test Oauth? necessary?....
+
+module.exports = router;
