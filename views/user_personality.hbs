@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- include materialize, jquery, our js and our stylesheets -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <title>chemistri</title>
+</head>
+
+<body>
+
+  <script>
+        $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+      });
+
+        $('#modal1').modal('open');
+
+      $('#modal1').modal('close');
+  </script>
+
+    <main>
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <p>Congrats you finished the test!</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <h1>You Are {{personality}}</h1>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <!-- Modal Trigger -->
+                  <a class="waves-effect waves-light btn" href="#modal1">Modal</a>
+
+                  <!-- Modal Structure -->
+                  <div id="modal1" class="modal">
+                    <div class="modal-content">
+                      <h4>Modal Header</h4>
+                      <p>A bunch of text</p>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <h6>these are the personalities that you match up with...</h6>
+              </div>
+          </div>
+      </div>
+
+      <div class="container">
+          <div class="section">
+              <div class="row center">
+                <form class="submit" action="index.html" method="post">
+                  <button type="submit" name="button" class="btn btn-default profile"><a href="/personalities">Create Your Profile</button>
+                </form>
+              </div>
+          </div>
+      </div>
+
+    </main>
+</body>
+
+</html>

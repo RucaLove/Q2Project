@@ -48,6 +48,12 @@
         $('.carousel').carousel('set', 4);
     </script>
 
+    <script>
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+    </script>
+
     <div class="container">
         <div class="section">
 
@@ -82,6 +88,8 @@
         </div>
     </div>
 
+
+
     <div class="container">
         <div class="section">
 
@@ -89,18 +97,24 @@
             <div class="row center">
                 <div class="col s12 m6">
                     <div class="icon-block">
-                        <h5 class="center">Age</h5>
+                        <h5 class="center">User Name</h5>
                         <form action="/action_page.php">
-                          <input type="number" name="quantity"
-                           min="0" max="100" step="1" value="30">
+                          <input type="text" name="usr_name">
                         <!-- </form> -->
                     </div>
                 </div>
 
                 <div class="col s12 m6">
                     <div class="icon-block">
-                        <h5 class="center personality">Personality</h5>
-                        <p class="light">Rendered from test result.</p>
+                      <div class="input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Man</option>
+                          <option value="2">Woman</option>
+                          <!-- <option value="3">Option 3</option> -->
+                        </select>
+                        <label>Gender</label>
+                      </div>
                     </div>
                 </div>
             </div>
@@ -108,6 +122,32 @@
         </div>
     </div>
 
+
+        <div class="container">
+            <div class="section">
+
+                <!--   Icon Section   -->
+                <div class="row center">
+                    <div class="col s12 m6">
+                        <div class="icon-block">
+                            <h5 class="center">Age</h5>
+                            <form action="/action_page.php">
+                              <input type="number" name="quantity"
+                               min="0" max="100" step="1">
+                            <!-- </form> -->
+                        </div>
+                    </div>
+
+                    <div class="col s12 m6">
+                        <div class="icon-block">
+                            <h5 class="center personality">Personality</h5>
+                            <p class="light">{{personality}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
     <div class="container">
         <div class="section">
@@ -124,7 +164,7 @@
             <div class="section">
                 <div class="row center">
                   <!-- <form class="submit" action="index.html" method="post"> -->
-                    <button type="submit" name="button" class="btn btn-default">Done</button>
+                    <button type="submit" name="button" class="btn btn-default"><a href="/personalities/1">Done</button>
                   </form>
                 </div>
             </div>

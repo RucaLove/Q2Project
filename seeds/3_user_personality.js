@@ -12,7 +12,7 @@ exports.seed = function(knex) {
       {
       id: 2,
       user_id: 2,
-      personality: 'ENTP'
+      personality: 'ENTJ'
       }
     ]);
     })

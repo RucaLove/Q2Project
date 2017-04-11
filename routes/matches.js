@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
   .then(match => {
     let humpsMatch = humps.camelizeKeys(match)
     console.log(humpsMatch[0], 'humpsMatch');
-    res.render('matches', {match: humpsMatch})
+    res.render('matches', { match: humpsMatch })
   })
   // go into the database to render people
   // go into user_saved_matches
@@ -43,7 +43,6 @@ router.post('/', (req, res, next) => {
   // get the match_id from the request body
   // NOTE: this post needs to come from the users/:id page with a post request/action to matches/:id
   // that way we can tell the difference between updating a profile and saving a match.
-
 })
 
 router.delete('/:id', (req, res, next) => {
@@ -51,4 +50,4 @@ router.delete('/:id', (req, res, next) => {
 
 })
 
- module.exports = router
+module.exports = router;
