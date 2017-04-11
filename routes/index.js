@@ -12,6 +12,8 @@ router.get('/', function(req, res, next) {
 
 // login with Oauth
 router.post('/', (req, res, next) => {
+
+  console.log(req.body.email);
   // Oauth: Facebook
   knex('users')
     .where('email', req.body.email)
@@ -19,7 +21,11 @@ router.post('/', (req, res, next) => {
       if (!user[0]) {
         //  --this logic tells us user is 'newUser'
         // set cookie here
-        res.cookie('newUser', {new: true, email: req.body.email, password: req.body.token}, {httpOnly:true})
+        let json = {'new': true,
+                    'email': req.body.email,
+                    'password': req.body.token}
+        // json = JSON(json)
+        res.cookie('newUser', json, {httpOnly:true})
         res.json(true);
       } else {
         // if user has registered: filled out a profile on our app, then we store the following info:
