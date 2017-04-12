@@ -7,7 +7,7 @@ const boom = require('boom')
 router.get('/', function(req, res, next) {
 
   let personality = req.cookies.newUserPersonality.personality
-      res.render('user_profile', { personality: personality })
+  res.render('user_profile', { personality: personality })
 
 })
 
@@ -29,7 +29,7 @@ router.get('/:id', (req, res, next) => {
   .then(user => {
     // console.log(user);
     //not currently rendering age
-      res.render('profile_view', {age: user[0].age, bio: user[0].bio, photos: user[0].photos, personality: user[0].personality})
+    res.render('profile_view', {age: user[0].age, bio: user[0].bio, photos: user[0].photos, personality: user[0].personality})
   })
 
   // PROBABLY DON'T NEED THIS
@@ -42,8 +42,10 @@ router.get('/:id', (req, res, next) => {
   // res.render('user_profile')
 })
 
-  router.post('/', (req, res, next) => {
+router.post('/', (req, res, next) => {
     console.log("COOKIE", req.cookies.newUser);
+    
+    res.cookie
     // knex('users')
     // .insert([{
     //   first_name: ,
