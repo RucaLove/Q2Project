@@ -5,12 +5,9 @@ const humps = require('humps')
 const boom = require('boom')
 
 router.get('/', function(req, res, next) {
-
   let personality = req.cookies.newUserPersonality.personality
       res.render('user_profile', { personality: personality })
-
 })
-
 
   // NOTE if new user cookie exists this will be a patch
 
@@ -19,9 +16,6 @@ router.get('/:id', (req, res, next) => {
   // this one needs to go into the DB to get the info
   // set a cookie with the user personality
   // this cookie also needs to say they are a new user
-
-
-
   // NOTE think about transition from first time user making profile to here and how info gets passed on. cookie?
   knex('users')
   .join('user_personality', 'users.id', 'user_personality.user_id')
