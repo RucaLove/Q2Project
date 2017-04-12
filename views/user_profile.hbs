@@ -32,6 +32,24 @@
 
 <body>
 
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '142942152904938',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
   <header>
       <nav>
           <div class="nav-wrapper ">
@@ -51,26 +69,25 @@
           </li>
           <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
           <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
-          <li><a href="#" class="waves-effect"><i class="material-icons"></i></a></li>
+          <li><a href="#" class="waves-effect"><i class="material-icons"></i>  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
           <li>
               <div class="divider"></div>
           </li>
-
-
 
 
       </ul>
       <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
       <!-- end of slide out nav -->
   </header>
-
-  <div class="container">
-    <div class="row right">
-      <nav>
-        <p>Hamburger</p>
-      </nav>
-    </div>
-  </div>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=142942152904938";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -196,9 +213,6 @@
                   </form>
                 </div>
         </div>
-
-
-                  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 
 
 </body>
