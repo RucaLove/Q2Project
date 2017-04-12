@@ -25,12 +25,17 @@
 
     <script src="/javascripts/style-components.js" charset="utf-8"></script>
 
+    <!-- facbook login script 'rb.js' -->
+    <!-- <script src="/javascripts/fb.js" charset="utf-8"></script> -->
+
     <!-- styles link -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 
 <body>
+  <!-- tag and div that NEED to be on every page that runs FBAuth -->
+  <div id="fb-root"></div>
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -85,8 +90,7 @@
     js = d.createElement(s); js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=142942152904938";
     fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
+
 
     <main>
       <div class="container">

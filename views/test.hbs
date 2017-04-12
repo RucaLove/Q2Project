@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 
     <title>chemistri</title>
+
     <!-- material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -23,11 +24,20 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
 
+    <!-- style components javascripts/ file -->
     <script src="/javascripts/style-components.js" charset="utf-8"></script>
+
+    <!-- facbook login script 'rb.js' -->
+    <!-- <script src="/javascripts/fb.js" charset="utf-8"></script> -->
 
     <!-- styles link -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
+
+<!-- tag and div that NEED to be on every page that runs FBAuth -->
+<div id="fb-root"></div>
+<main>
 
 <body>
 
@@ -88,48 +98,52 @@
   }(document, 'script', 'facebook-jssdk'));
   </script>
 
-    <main>
 
-      <div class="container">
-          <div class="section">
-              <div class="row center">
+    <div class="container">
+        <div class="section">
+            <div class="row center">
                 <h1>Take the Meyers Briggs Personality Test</h1>
-              </div>
-          </div>
-      </div>
+            </div>
+        </div>
+    </div>
 
-      <div class="container">
-          <div class="section">
-              <div class="row center">
+    <div class="container">
+        <div class="section">
+            <div class="row center">
                 <p>Question 1/50</p>
-              </div>
-          </div>
-      </div>
+            </div>
+        </div>
+    </div>
 
-      <div class="container">
-          <div class="section">
-              <div class="row center">
+    <div class="container">
+        <div class="section">
+            <div class="row center">
+
                 <!-- Insert question from json data here -->
-                <h4>{{question}}</h4>
+                <article>{{question}}</article>
+
                 <form class="" action="index.html" method="post">
-                  <button type="radio" name="button">Yes</button>
-                  <button type="radio" name="button">No</button>
+                    <button type="radio" name="button">Yes</button>
+                    <button type="radio" name="button">No</button>
                 </form>
-              </div>
-          </div>
-      </div>
+            </div>
+        </div>
+    </div>
 
-      <div class="container">
-          <div class="section">
-              <div class="row center">
+    <div class="container">
+        <div class="section">
+            <div class="row center">
                 <form class="submit" action="index.html" method="post">
-                  <button type="submit" name="button" class="btn btn-default profile"><a href="/result">Done</button>
+                    <button type="submit" name="button" class="btn btn-default profile"><a href="/result">Done</button>
                 </form>
-              </div>
-          </div>
-      </div>
 
-    </main>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="status"></div> -->
+
+</main>
+
 </body>
 
 </html>
