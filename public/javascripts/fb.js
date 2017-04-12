@@ -47,6 +47,8 @@ $( document ).ready(function() {
     }(document, 'script', 'facebook-jssdk'));
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
+
+
     function testAPI(accessToken) {
         console.log('Welcome!  Fetching your information.... ');
         FB.api('/me?fields=id,name,email', function(response) {
@@ -69,18 +71,37 @@ $( document ).ready(function() {
                 .done((data) => {
 
                   if (data) {
-
                     window.location = '/test'
                   } else {
-
                     window.location = '/matches'
                   }
                 })
                 .fail((data) =>{
                   console.log('\n\nregistered user\n\n');
                 })
-                
-            document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
+            // NOTE uncomment the code below for index.hbs
+            // document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
         })
     }
+
+
+      // window.fbAsyncInit = function() {
+      //   FB.init({
+      //     appId      : '142942152904938',
+      //     xfbml      : true,
+      //     version    : 'v2.8'
+      //   });
+      //   FB.AppEvents.logPageView();
+      // };
+      //
+      // (function(d, s, id){
+      //    var js, fjs = d.getElementsByTagName(s)[0];
+      //    if (d.getElementById(id)) {return;}
+      //    js = d.createElement(s); js.id = id;
+      //    js.src = "//connect.facebook.net/en_US/sdk.js";
+      //    fjs.parentNode.insertBefore(js, fjs);
+      //  }(document, 'script', 'facebook-jssdk'));
+
+
+
 })
