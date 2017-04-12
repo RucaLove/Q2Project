@@ -50,6 +50,8 @@ router.get('/:id', (req, res, next) => {
 
   // if profile id number matches cookie id number
   // display buttons for edit
+
+
 })
 
 router.put('/', (req, res, next) => {
