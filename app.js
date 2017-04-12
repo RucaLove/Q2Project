@@ -13,6 +13,7 @@ const matches = require('./routes/matches')
 const profile = require('./routes/profile')
 const test = require('./routes/personality-test')
 const message = require('./routes/message')
+const admin = require('./routes/admin')
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/profile', profile)
 app.use('/test', test)
 app.use('/message', message)
 app.use('/result', result)
+app.use('/admin', admin)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
