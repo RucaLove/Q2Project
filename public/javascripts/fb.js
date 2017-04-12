@@ -79,8 +79,7 @@ $( document ).ready(function() {
                 .fail((data) =>{
                   console.log('\n\nregistered user\n\n');
                 })
-
-      
+                
             document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
         })
     }
