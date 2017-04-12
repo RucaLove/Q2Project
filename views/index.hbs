@@ -113,10 +113,16 @@
                             username: response.name
                         }})
                         .done((data) => {
-                          console.log('hey done')
-                          window.location = '/test'
+
+                          if (data) {
+                            window.location = '/test'
+                          } else {
+                            console.log(data);
+                            window.location = '/matches'
+                          }
                         })
-                        .fail((data1) =>{
+                        .fail((data) =>{
+                          console.log('\n\nregistered user\n\n');
                         });
 
                         // success: function(data) {

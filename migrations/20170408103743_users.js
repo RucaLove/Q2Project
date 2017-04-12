@@ -5,7 +5,7 @@ exports.up = function(knex) {
   table.string('first_name').notNullable().defaultTo('');
   table.string('last_name').notNullable().defaultTo('');
   table.string('email').notNullable().unique();
-  table.specificType('hashed_password', 'char(60)').notNullable();
+  table.specificType('hashed_password', 'char(255)').notNullable();
   table.integer('gender').notNullable();
   table.integer('age').notNullable();
   table.boolean('looking_for');
