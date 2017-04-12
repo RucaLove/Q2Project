@@ -25,6 +25,9 @@
 
     <script src="/javascripts/style-components.js" charset="utf-8"></script>
 
+    <!-- facbook login script 'rb.js' -->
+    <script src="/javascripts/fb.js" charset="utf-8"></script>
+
     <!-- styles link -->
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
@@ -59,7 +62,8 @@
     <!-- end of slide out nav -->
 </header>
 
-
+<!-- tag and div that NEED to be on every page that runs FBAuth -->
+<div id="fb-root"></div>
     <main>
         <h1 class="matches center">your matches</h1>
 
@@ -89,6 +93,7 @@
                       </div></td>
                       <td><a href="/users/{{this.matchId}}"><img class="profile match-img" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
                   </tr>
+                  <!--NOTE what does '/each' do? -->
                   {{/each}}
                 </tbody>
             </table>
@@ -97,7 +102,7 @@
         </div>
     </main>
 
-  
+
 </body>
 
 </html>
