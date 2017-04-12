@@ -25,8 +25,7 @@
 
     <script src="/javascripts/style-components.js" charset="utf-8"></script>
 
-    <!-- facbook login script 'rb.js' -->
-    <!-- <script src="/javascripts/fb.js" charset="utf-8"></script> -->
+    <script src="/javascripts/profile_id.js" charset="utf-8"></script>
 
     <!-- styles link -->
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -153,7 +152,7 @@
                     <div class="icon-block">
                         <h5 class="center">Age</h5>
                         <form action="/action_page.php">
-                            <input type="number" id="editAge" name="quantity" min="0" max="110" step="1" value="{{age}}">
+                            <input type="number" id="editAge" name="quantity" min="0" max="110" step="1" value="{{age}}" id="age">
                             <!-- </form> -->
                     </div>
                 </div>
@@ -175,7 +174,7 @@
             <div class="row center">
                 <h5 class="header col s12">Bio</h5>
                 <!-- <form> -->
-                <input type="text" id="editBio" name="bio" placeholder="{{bio}}">
+                <input type="text" id="editBio" name="bio" placeholder="{{bio}}" id="bio">
                 <!-- </form> -->
             </div>
         </div>
