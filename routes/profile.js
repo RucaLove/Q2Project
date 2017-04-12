@@ -65,20 +65,22 @@ router.get('/:id', (req, res, next) => {
       }], '*')
       .then((newUserPersonality) => {
         // this was `/users/{newUser[0].id}` before
-        res.redirect(`/profile/{newUser[0].id}`)
+        res.redirect(`/profile/${newUser[0].id}`)
       })
     })
   })
 
 router.patch('/:id', (req, res, next) => {
   let id = +req.params.id
-  if(req.body.age !==undefined && req.body.bio !== undefined){
+  let age = +req.body.age
+  let bio = req.body.bio
+  if(age !==undefined && bio !== undefined){
     console.log('both');
   knex('users')
   .where('id', `${id}`)
   .update([{
-    age: +req.body.age,
-    bio: req.body.bio
+    age: age,
+    bio: bio
   }], '*')
   .then(update => {
     res.json(true)
@@ -87,12 +89,12 @@ router.patch('/:id', (req, res, next) => {
     console.log('error when both defined', err);
   })
   }
-  else if (req.body.bio !== undefined && req.body.age === undefined){
+  else if (bio !== undefined && age === undefined){
     console.log('not age');
     knex('users')
     .update('id', `${id}`)
     .insert([{
-      bio: req.body.bio
+      bio: bio
     }], '*')
     .then(insert => {
       res.json(true)
@@ -101,12 +103,12 @@ router.patch('/:id', (req, res, next) => {
       console.log("error when bio is defined", err);
     })
   }
-  else if (req.body.age !== undefined && req.body.bio ===undefined) {
+  else if (age !== undefined && bio ===undefined) {
     console.log('not bio');
     knex('users')
     .where('id', `${id}`)
     .update([{
-      age: +req.body.age
+      age: age
     }], '*')
     .then(insert => {
       res.json(true)
