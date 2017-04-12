@@ -12,7 +12,7 @@ $(document).ready(() => {
       data: {userId: id},
       success: userGone => {
         console.log("gone",userGone);
-        // location.reload()
+        location.reload()
       },
       fail: err => {
         console.log(err);
