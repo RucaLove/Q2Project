@@ -8,8 +8,7 @@ router.get('/', function(req, res, next) {
 
   let personality = req.cookies.newUserPersonality.personality
       res.render('user_profile', { personality: personality })
-      // console.log('cookies', req.cookies);
-      // console.log(req.cookies.newUserPersonality);
+
 })
 
 
@@ -21,12 +20,14 @@ router.get('/:id', (req, res, next) => {
   // set a cookie with the user personality
   // this cookie also needs to say they are a new user
 
+
+
   // NOTE think about transition from first time user making profile to here and how info gets passed on. cookie?
   knex('users')
   .join('user_personality', 'users.id', 'user_personality.user_id')
   .where('users.id', id)
   .then(user => {
-    console.log(user);
+    // console.log(user);
     //not currently rendering age
       res.render('profile_view', {age: user[0].age, bio: user[0].bio, photos: user[0].photos, personality: user[0].personality})
   })
