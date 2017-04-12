@@ -5,7 +5,7 @@ const humps = require('humps')
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
-  res.render('about')
+  // res.render('about')
 
   let count = 0
 
@@ -24,7 +24,6 @@ router.get('/', function(req, res, next) {
         personality: user[1].personality
       });
     })
-
 });
 
 router.get('/:id', (req, res, next) => {
@@ -51,19 +50,6 @@ router.get('/:id', (req, res, next) => {
 
   // if profile id number matches cookie id number
   // display buttons for edit
-
-})
-
-router.post('/:id', (req, res, next) => {
-
-
-  // check for matching cookie id and new user cookie
-  // if they have both let them create a profile
-
-  // after they create the profile successfully
-  // we need to delete the newUSer cookie so they can only make one
-
-  // if no cookie-res.render users-browsing view
 })
 
 router.put('/', (req, res, next) => {
