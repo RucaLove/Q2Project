@@ -48,9 +48,9 @@
                   <a href="#!name"><span class="white-text name">chemistri</span></a>
               </div>
           </li>
-          <li><a href="order.html" class="waves-effect"><i class="material-icons">shopping_basket</i>Order</a></li>
-          <li><a href="index.html" class="waves-effect"><i class="material-icons">local_library</i>About</a></li>
-          <li><a href="#" class="waves-effect"><i class="material-icons">local_library</i>Logout</a></li>
+          <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
+          <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
+          <li><a href="#" class="waves-effect"><i class="material-icons"></i><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
           <li>
               <div class="divider"></div>
           </li>
@@ -94,7 +94,19 @@
                         <h4>{{age}}</h4>
                     </div>
                     <div class="col s4 center personality">
-                        <h4>{{personality}}</h4>
+                      <!-- Modal Trigger -->
+                      <a class="waves-effect waves-light btn" href="#modal1">{{personality}}</a>
+
+                      <!-- Modal Structure -->
+                      <div id="modal1" class="modal">
+                          <div class="modal-content">
+                              <h4>Modal Header</h4>
+                              <p>A bunch of text</p>
+                          </div>
+                          <div class="modal-footer">
+                              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                          </div>
+                      </div>
                     </div>
                     <div class="col s4 center distance">
                         <h4>Distance rendered here.</h4>
@@ -126,6 +138,7 @@
             </div>
         </div>
     </main>
+
 </body>
 
 </html>
