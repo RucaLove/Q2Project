@@ -31,15 +31,6 @@ router.get('/:id', (req, res, next) => {
       res.render('profile_view', {age: user[0].age, bio: user[0].bio, photos: user[0].photos, personality: user[0].personality})
   })
 
-// router.post('/', (req, res, next) => {
-//   knex('users')
-//   .insert {
-//     .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
-//   }
-//   knex('user_personality')
-// })
-
-
   // PROBABLY DON'T NEED THIS
   // knex('user_personality')
   //   .orderBy('id', req.params.id)
@@ -49,6 +40,23 @@ router.get('/:id', (req, res, next) => {
   //   })
   // res.render('user_profile')
 })
+
+  router.post('/', (req, res, next) => {
+    knex('users')
+    .insert([{
+      first_name: ,
+      last_name: ,
+      email: ,
+      hashed_password: ,
+      gender: ,
+      age: ,
+      bio: ,
+      usr_name: ,
+      photo:
+    }], '*')
+    // .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
+    knex('user_personality')
+  })
 
 router.post('/:id', (req, res, next) => {
 // so we post to the DB

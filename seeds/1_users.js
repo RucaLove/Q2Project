@@ -51,6 +51,22 @@ exports.seed = function(knex) {
       lat: 40.0207741,
       long: -105.277141,
       photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+    },
+    {
+      id: 4,
+      first_name: 'Megan',
+      last_name: 'Gross',
+      email: '144.mdgross@gmail.com',
+      hashed_password: 'EBBCCAVAZCUOoBAAA097G5WMfuA2O3c2xFyk7QCfpYe9FZCpDyZCAhYRVg2YT15Q',
+      gender: 2,
+      age: 26,
+      looking_for: true,
+      interested_in: 1,
+      bio: 'My teammates love me endlessly.',
+      usr_name: 'Gross',
+      lat: 40.0207741,
+      long: -105.277141,
+      photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
     }
     ]);
   })
