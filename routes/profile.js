@@ -70,8 +70,49 @@ router.post('/', (req, res, next) => {
   })
 
 router.patch('/:id', (req, res, next) => {
-
-
+  if(req.body.age !==undefined && req.body.bio !== undefined){
+    console.log('both');
+  ('knex')
+  .insert([{
+    age: +req.body.age,
+    bio: req.body.bio
+  }], '*')
+  .then(update => {
+    res.json(true)
+  })
+  .catch(err => {
+    console.log('error when both defined', err);
+  })
+  }
+  else if (req.body.bio !== undefined && req.body.age === undefined){
+    console.log('not age');
+    ('knex')
+    .insert([{
+      bio: req.body.bio
+    }], '*')
+    .then(insert => {
+      res.json(true)
+    })
+    .catch(err => {
+      console.log("error when bio is defined", err);
+    })
+  }
+  else if (req.body.age !== undefined && req.body.bio ===undefined) {
+    console.log('not bio');
+    ('knex')
+    .insert([{
+      age: +req.body.age
+    }], '*')
+    .then(insert => {
+      res.json(true)
+    })
+    .catch(err => {
+      console.log("error when age is defined", err);
+    })
+  }
+  else {
+    res.json(false)
+  }
 })
 
 // can the transition button be static? or does it need to post?
