@@ -35,6 +35,7 @@ router.get('/', (req, res, next) => {
 
 // can this be an AJAX post request from the check-mark button to here?
 router.post('/', (req, res, next) => {
+  // this needs to 
   console.log(req.body);
   res.json(true)
 

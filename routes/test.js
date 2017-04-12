@@ -5,7 +5,7 @@ const humps = require('humps')
 const boom = require('boom')
 
 
-
+// pretty sure we need to delete this
 router.get('/', function(req, res, next){
   // render questions and answers on test.hbs
 

@@ -54,6 +54,7 @@ router.get('/:id', (req, res, next) => {
 
 })
 
+// delete this. this functionality is handled in profile route
 router.post('/:id', (req, res, next) => {
 
 
