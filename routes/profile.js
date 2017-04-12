@@ -42,22 +42,22 @@ router.get('/:id', (req, res, next) => {
   // res.render('user_profile')
 })
 
-  router.post('/', (req, res, next) => {
-    knex('users')
-    .insert([{
-      first_name: ,
-      last_name: ,
-      email: ,
-      hashed_password: ,
-      gender: ,
-      age: ,
-      bio: ,
-      usr_name: ,
-      photo:
-    }], '*')
-    // .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
-    knex('user_personality')
-  })
+  // router.post('/', (req, res, next) => {
+  //   knex('users')
+  //   .insert([{
+  //     first_name: ,
+  //     last_name: ,
+  //     email: ,
+  //     hashed_password: ,
+  //     gender: ,
+  //     age: ,
+  //     bio: ,
+  //     usr_name: ,
+  //     photo:
+  //   }], '*')
+  //   // .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
+  //   knex('user_personality')
+  // })
 
 router.post('/:id', (req, res, next) => {
 // so we post to the DB
