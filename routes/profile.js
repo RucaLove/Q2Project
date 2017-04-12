@@ -70,10 +70,12 @@ router.post('/', (req, res, next) => {
   })
 
 router.patch('/:id', (req, res, next) => {
+  let id = +req.params.id
   if(req.body.age !==undefined && req.body.bio !== undefined){
     console.log('both');
   knex('users')
-  .insert([{
+  .where('id', `${id}`)
+  .update([{
     age: +req.body.age,
     bio: req.body.bio
   }], '*')
@@ -87,6 +89,7 @@ router.patch('/:id', (req, res, next) => {
   else if (req.body.bio !== undefined && req.body.age === undefined){
     console.log('not age');
     knex('users')
+    .update('id', `${id}`)
     .insert([{
       bio: req.body.bio
     }], '*')
@@ -100,7 +103,8 @@ router.patch('/:id', (req, res, next) => {
   else if (req.body.age !== undefined && req.body.bio ===undefined) {
     console.log('not bio');
     knex('users')
-    .insert([{
+    .where('id', `${id}`)
+    .update([{
       age: +req.body.age
     }], '*')
     .then(insert => {
