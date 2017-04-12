@@ -45,6 +45,20 @@ main {
   border-radius: 100px;
 }
 
+#matches-button {
+  background-color: whitesmoke;
+  color: #006AFF;
+  font-size: 1em;
+  border-radius: 100px;
+}
+
+#matches-button {
+  background-color: whitesmoke;
+  color: #006AFF;
+  font-size: 1em;
+  border-radius: 100px;
+}
+
 .delete {
   color: rgba(255, 252, 87, 0.99);
   /*color: cyan;*/
@@ -66,10 +80,10 @@ main {
   height: 100%;
 }
 /* Optional: Makes the sample page fill the window. */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+
+
+.about {
+  color: rgba(255, 252, 87, 0.99);
 }
 
 .error {
