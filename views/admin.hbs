@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>chemistri</title>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- google font cdn -->
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet ">
+
+    <!-- set initial viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+    <script src="/javascripts/style-components.js" charset="utf-8"></script>
+    <script src="/javascripts/admin-events.js" charset="utf-8"></script>
+
+    <!-- styles link -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<header>
+    <nav>
+        <div class="nav-wrapper ">
+            <a href="#" class="brand-logo center">chemistri</a>
+        </div>
+    </nav>
+    <!-- slide out nav -->
+    <ul id="slide-out" class="side-nav">
+        <li>
+            <div class="userView">
+                <div class="background">
+                    <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
+                </div>
+                <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
+                <a href="#!name"><span class="white-text name">chemistri</span></a>
+            </div>
+        </li>
+        <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
+        <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
+        <li><a href="#" class="waves-effect"><i class="material-icons"></i><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+
+
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
+    <!-- end of slide out nav -->
+</header>
+
+
+    <main>
+        <h1 class="matches center">delete users (admin only)</h1>
+
+        <!-- this is the container for the top side-scroll through names -->
+        <div class="">
+
+        </div>
+        <div class="container">
+            <table>
+                <tbody>
+                  {{#each users}}
+                  <tr>
+                      <td><i class="material-icons delete" data-user-id="{{this.id}}">clear</i></td>
+                      <td>{{this.id}}</td>
+                      <td>{{this.usrName}}</td>
+                      <td><p>{{this.firstName}} {{this.lastName}}</p></td>
+                      <td class="email">{{this.email}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+
+</body>
+
+</html>

@@ -97,6 +97,9 @@ main {
   color: rgba(255, 252, 87, 0.99);
 }
 
+.email {
+  font-size: .5em;
+}
 .error {
   color: whitesmoke;
 }
