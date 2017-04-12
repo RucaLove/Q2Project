@@ -27,81 +27,95 @@
 
     <!-- styles link -->
     <link rel="stylesheet" href="/stylesheets/style.css">
+
 </head>
 
 <body>
-  <header>
-      <nav>
-          <div class="nav-wrapper ">
-              <a href="#" class="brand-logo center">chemistri</a>
-          </div>
-      </nav>
-      <!-- slide out nav -->
-      <ul id="slide-out" class="side-nav">
-          <li>
-              <div class="userView">
-                  <div class="background">
-                      <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
-                  </div>
-                  <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
-                  <a href="#!name"><span class="white-text name">chemistri</span></a>
-              </div>
-          </li>
-          <li><a href="order.html" class="waves-effect"><i class="material-icons">shopping_basket</i>Order</a></li>
-          <li><a href="index.html" class="waves-effect"><i class="material-icons">local_library</i>About</a></li>
-          <li><a href="#" class="waves-effect"><i class="material-icons">local_library</i>Logout</a></li>
-          <li>
-              <div class="divider"></div>
-          </li>
+    <header>
+        <nav>
+            <div class="nav-wrapper ">
+                <a href="#" class="brand-logo center">chemistri</a>
+            </div>
+        </nav>
+        <!-- slide out nav -->
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView">
+                    <div class="background">
+                        <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
+                    </div>
+                    <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
+                    <a href="#!name"><span class="white-text name">chemistri</span></a>
+                </div>
+            </li>
+            <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
+            <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
+            <li><a href="#" class="waves-effect"><i class="material-icons"></i><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
 
 
-      </ul>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
-      <!-- end of slide out nav -->
-  </header>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
+        <!-- end of slide out nav -->
+    </header>
 
     <main>
         <div class="parallax-container valign-wrapper">
-                <div class="container">
-                    <div class="row center picture">
-                        <h1>{{username}}</h1>
-                        <a href="/users/{{id}}"><img src="{{photo}}" alt="profile-pic"></a>
-                    </div>
+            <div class="container">
+                <div class="row center picture">
+                    <h1>{{username}}</h1>
+                    <a href="/users/{{id}}"><img src="{{photo}}" alt="profile-pic"></a>
                 </div>
+            </div>
         </div>
 
 
         <div class="container">
-                <div class="row">
-                    <div class="col s12 m12 l4 center age">
-                        <h4>{{age}}</h4>
-                    </div>
-                    <div class="col s12  m12 l4 center personality">
-                        <h4>{{personality}}</h4>
-                    </div>
-                    <div class="col s12 m12 l4 center distance">
-                        <h4>Distance rendered here.</h4>
-                    </div>
+            <div class="row">
+                <div class="col s12 m12 l4 center age">
+                    <h4>{{age}}</h4>
                 </div>
-        </div>
+                <div class="col s12  m12 l4 center personality">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn" href="#modal1">{{personality}}</a>
 
-        <div class="container">
-                <div class="row center">
-                    <div class="col s12 m12 l12">
-                        <div class="icon-block">
-
-                          <!-- NOTE this submit button thing is weird. figure out soon -->
-                            <form class="submit" action="index.html" method="post">
-                                <button type="submit" name="button" class="btn btn-default">Next</button>
-                                <button type="submit" name="button" class="btn btn-default">Back</button>
-                            </form>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Modal Header</h4>
+                            <p>A bunch of text</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
                         </div>
                     </div>
                 </div>
+                <div class="col s12 m12 l4 center distance">
+                    <h4>Distance rendered here.</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <div class="icon-block">
+
+                        <!-- NOTE this submit button thing is weird. figure out soon -->
+                        <form class="submit" action="index.html" method="post">
+                            <button type="submit" name="button" class="btn btn-default">Next</button>
+                            <button type="submit" name="button" class="btn btn-default">Back</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
     </main>
+
 </body>
 
 </html>

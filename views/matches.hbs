@@ -42,9 +42,9 @@
                 <a href="#!name"><span class="white-text name">chemistri</span></a>
             </div>
         </li>
-        <li><a href="order.html" class="waves-effect"><i class="material-icons">shopping_basket</i>Order</a></li>
-        <li><a href="index.html" class="waves-effect"><i class="material-icons">local_library</i>About</a></li>
-        <li><a href="#" class="waves-effect"><i class="material-icons">local_library</i>Logout</a></li>
+        <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
+        <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
+        <li><a href="#" class="waves-effect"><i class="material-icons"></i><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
         <li>
             <div class="divider"></div>
         </li>
@@ -70,7 +70,19 @@
                   <tr>
                       <td data-id="{{this.matchId}}"><i class="material-icons delete">clear</i></td>
                       <td><p>{{this.firstName}} {{this.lastName}}</p></td>
-                      <td><p>{{this.personality}}</p></td>
+                      <td><!-- Modal Trigger -->
+                      <a class="waves-effect waves-light btn" href="#modal1">{{personality}}</a>
+
+                      <!-- Modal Structure -->
+                      <div id="modal1" class="modal">
+                          <div class="modal-content">
+                              <h4>Modal Header</h4>
+                              <p>A bunch of text</p>
+                          </div>
+                          <div class="modal-footer">
+                              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                          </div>
+                      </div></td>
                       <td><a href="/users/{{this.matchId}}"><img class="profile match-img" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>
                   </tr>
                   {{/each}}
@@ -80,6 +92,8 @@
             <a class="waves-effect waves-light btn" id="matches-button" href="/users">browse</a>
         </div>
     </main>
+
+  
 </body>
 
 </html>
