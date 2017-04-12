@@ -6,8 +6,7 @@ const boom = require('boom')
 
 function admin(req, res, next) {
   if (!req.cookies.isAdmin) {
-    boom.unauthorized('not for you')
-    res.render('error')
+    res.redirect('/error')
   } else {
     next()
   }
