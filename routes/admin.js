@@ -5,12 +5,12 @@ const humps = require('humps')
 const boom = require('boom')
 
 function admin(req, res, next) {
-  // if (!req.cookies.isAdmin) {
-  //   boom.unauthorized('not for you')
-  //   res.render('error')
-  // } else {
+  if (!req.cookies.isAdmin) {
+    boom.unauthorized('not for you')
+    res.render('error')
+  } else {
     next()
-  // }
+  }
 }
 
 //render users table

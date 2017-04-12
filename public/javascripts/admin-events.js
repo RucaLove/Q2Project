@@ -13,6 +13,7 @@ $(document).ready(() => {
       success: userGone => {
         console.log("gone",userGone);
         location.reload()
+
       },
       fail: err => {
         console.log(err);
