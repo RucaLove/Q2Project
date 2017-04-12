@@ -20,20 +20,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
 
     <script src="javascripts/style-components.js" charset="utf-8"></script>
-    
+
     <!-- styles link -->
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="row right">
+  <header>
       <nav>
-        <p>Hamburger</p>
+          <div class="nav-wrapper ">
+              <a href="#" class="brand-logo center">chemistri</a>
+          </div>
       </nav>
+      <!-- slide out nav -->
+      <ul id="slide-out" class="side-nav">
+          <li>
+              <div class="userView">
+                  <div class="background">
+                      <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
+                  </div>
+                  <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
+                  <a href="#!name"><span class="white-text name">chemistri</span></a>
+              </div>
+          </li>
+          <li><a href="order.html" class="waves-effect"><i class="material-icons">shopping_basket</i>Order</a></li>
+          <li><a href="index.html" class="waves-effect"><i class="material-icons">local_library</i>About</a></li>
+          <li><a href="#" class="waves-effect"><i class="material-icons">local_library</i>Logout</a></li>
+          <li>
+              <div class="divider"></div>
+          </li>
+
+
+      </ul>
+      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
+      <!-- end of slide out nav -->
+  </header>
+
+    <div class="container">
+        <div class="row right">
+            <nav>
+                <p>Hamburger</p>
+            </nav>
+        </div>
     </div>
-  </div>
 
     <script type="text/javascript">
         $(document).ready(function() {
@@ -54,10 +84,10 @@
         <div class="section">
 
             <div class="row center">
-                    <h1 class="text-center blue-text">
+                <h1 class="text-center blue-text">
                       Chemistri
                     </h1>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -69,7 +99,7 @@
                     <!-- <h3><i class="mdi-content-send brown-text"></i></h3> -->
                     <h4>Upload Some Photos</h4>
                     <div class="photo">
-                      <img src="{{photos}}" alt="profile-pic">
+                        <img src="{{photos}}" alt="profile-pic">
                     </div>
                     <form class="photo" action="index.html" method="post">
                         <!-- <div class="carousel">
@@ -95,9 +125,8 @@
                     <div class="icon-block">
                         <h5 class="center">Age</h5>
                         <form action="/action_page.php">
-                          <input type="number" id="editAge" name="quantity"
-                           min="0" max="110" step="1" value="{{age}}">
-                        <!-- </form> -->
+                            <input type="number" id="editAge" name="quantity" min="0" max="110" step="1" value="{{age}}">
+                            <!-- </form> -->
                     </div>
                 </div>
 
@@ -115,24 +144,24 @@
 
     <div class="container">
         <div class="section">
-                <div class="row center">
-                    <h5 class="header col s12">Bio</h5>
-                    <!-- <form> -->
-                      <input type="text" id="editBio" name="bio" placeholder="{{bio}}">
-                    <!-- </form> -->
-                </div>
+            <div class="row center">
+                <h5 class="header col s12">Bio</h5>
+                <!-- <form> -->
+                <input type="text" id="editBio" name="bio" placeholder="{{bio}}">
+                <!-- </form> -->
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <div class="section">
-                <div class="row center">
-                  <!-- <form class="submit" action="index.html" method="post"> -->
-                    <a class="waves-effect waves-light btn" id="editProfile">edit</a>
-                  </form>
-                </div>
+    <div class="container">
+        <div class="section">
+            <div class="row center">
+                <!-- <form class="submit" action="index.html" method="post"> -->
+                <a class="waves-effect waves-light btn" id="editProfile">edit</a>
+                </form>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
