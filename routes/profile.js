@@ -44,30 +44,30 @@ router.get('/:id', (req, res, next) => {
 
   router.post('/', (req, res, next) => {
     console.log("COOKIE", req.cookies.newUser);
-    // knex('users')
-    // .insert([{
-    //   first_name: ,
-    //   last_name: ,
-    //   email: ,
-    //   hashed_password: ,
-    //   gender: ,
-    //   age: ,
-    //   bio: ,
-    //   usr_name: ,
-    //   photo:
-    // }], '*')
-    // // .returning(["id", "first_name", "last_name", "email", "hashed_password", "gender", "age", "bio", "usr_name", "photo"])
-    // knex('user_personality')
+    knex('users')
+    .insert([{
+      first_name: 'Sara',
+      last_name: 'Fake',
+      email: 'fake2@gmail.com',
+      hashed_password: 'HHHWKedjkbakfbzjb7834684765984659348y',
+      gender: 2,
+      age: 89,
+      bio: 'I love chemistri.',
+      usr_name: 'FakeFace2',
+      photo: 'http://girlsgonewise.com/wp-content/uploads/2011/11/grumpy-old-lady.jpg'
+    }], '*')
+    .then((newUser) => {
+      console.log(newUser);
+      knex('user_personality')
+      .insert([{
+        user_id: newUser[0].id,
+        personality: 'ISTJ'
+      }], '*')
+      .then((newUserPersonality) => {
+        res.redirect(`/users/{newUser[0].id}`)
+      })
+    })
   })
-
-router.post('/:id', (req, res, next) => {
-// so we post to the DB
-// it goes into the database
-// now we need to put their new id into the url
-// then they need to go to their profile for real
-
-  res.render('profile_view', { userData: userData })
-})
 
 router.patch('/:id', (req, res, next) => {
 
