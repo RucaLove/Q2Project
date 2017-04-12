@@ -21,6 +21,8 @@
 
     <script src="javascripts/style-components.js" charset="utf-8"></script>
 
+    <script src="javascripts/matches-events.js" charset="utf-8"></script>
+
     <!-- styles link -->
     <link rel="stylesheet" href="stylesheets/style.css">
 </head>
@@ -68,7 +70,7 @@
                 <tbody>
                   {{#each match}}
                   <tr>
-                      <td data-id="{{this.matchId}}"><i class="material-icons delete">clear</i></td>
+                      <td><i class="material-icons delete" data-match-id="{{this.matchId}}">clear</i></td>
                       <td><p>{{this.firstName}} {{this.lastName}}</p></td>
                       <td><p>{{this.personality}}</p></td>
                       <td><a href="/users/{{this.matchId}}"><img class="profile match-img" src="http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-rainbow-unicorn.png"></a></td>

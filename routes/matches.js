@@ -13,7 +13,6 @@ router.get('/', (req, res, next) => {
   .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
   .then(match => {
     let humpsMatch = humps.camelizeKeys(match)
-    console.log(humpsMatch[0], 'humpsMatch');
     res.render('matches', { match: humpsMatch })
   })
   // go into the database to render people
@@ -35,8 +34,7 @@ router.get('/', (req, res, next) => {
 
 // can this be an AJAX post request from the check-mark button to here?
 router.post('/', (req, res, next) => {
-  // this needs to 
-  console.log(req.body);
+  // this needs to
   res.json(true)
 
   // put chosen match in user_saved_matches table
@@ -46,8 +44,19 @@ router.post('/', (req, res, next) => {
   // that way we can tell the difference between updating a profile and saving a match.
 })
 
-router.delete('/:id', (req, res, next) => {
-  // let people delete users from matching
+router.delete('/', (req, res, next) => {
+  let id = +req.body.matchId
+
+  knex('user_saved_matches')
+  .where('match_id', id)
+  .del()
+  .then(gone => {
+      res.json(true)
+    console.log('deleted', gone)
+  })
+  .catch(err => {
+    res.json(false)
+  })
 
 })
 
