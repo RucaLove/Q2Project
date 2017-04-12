@@ -1,11 +1,26 @@
-$(document).ready(()=> {
+$(document).ready(() => {
 // add event listeners to grab updated info from pernalities/;id
-  let age = $('#age').val()
-  console.log(age);
-  let bio = $('#bio').val()
-  console.log(bio);
   $('#editProfile').click(e => {
-    console.log("HI");
-    $.ajax({})
+    // console.log("HI");
+    let age = $('#editAge').val()
+    // console.log(age);
+    let bio = $('#editBio').val()
+    // console.log(bio);
+    $.ajax({
+      method: 'PATCH',
+      url: '/profile/:id',
+      dataType: 'json',
+      data: {
+        age: age,
+        bio: bio
+      },
+      success: (data) => {
+        // console.log(data);
+        // location.reload()
+      },
+      fail: (error) => {
+        console.log(error);
+      }
+    })
   })
 })
