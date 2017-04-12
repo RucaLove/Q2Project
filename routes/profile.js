@@ -64,7 +64,8 @@ router.post('/', (req, res, next) => {
         personality: 'ISTJ'
       }], '*')
       .then((newUserPersonality) => {
-        res.redirect(`/users/{newUser[0].id}`)
+        // this was `/users/{newUser[0].id}` before
+        res.redirect(`/profile/{newUser[0].id}`)
       })
     })
   })
