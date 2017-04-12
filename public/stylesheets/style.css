@@ -73,6 +73,17 @@ main {
   background-image: url();
 }
 
+.navigate {
+  color: cyan;
+}
+
+#next {
+  color: whitesmoke;
+}
+
+#back {
+  color:whitesmoke;
+}
 
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
