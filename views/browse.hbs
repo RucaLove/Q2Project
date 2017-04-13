@@ -35,8 +35,8 @@
 
 <body>
 
-  <!-- tag and div that NEED to be on every page that runs FBAuth -->
-  <div id="fb-root"></div>
+    <!-- tag and div that NEED to be on every page that runs FBAuth -->
+    <div id="fb-root"></div>
     <header>
         <nav>
             <div class="nav-wrapper ">
@@ -68,51 +68,56 @@
     </header>
 
 
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '142942152904938',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
-      FB.AppEvents.logPageView();
-    };
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '142942152904938',
+                xfbml: true,
+                version: 'v2.8'
+            });
+            FB.AppEvents.logPageView();
+        };
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 
 
     <main>
-        <div class="parallax-container valign-wrapper">
-            <div class="container">
-                <div class="row center picture">
-                    <h1>{{username}}</h1>
-                    <a href="/users/{{id}}"><img src="{{photo}}" alt="profile-pic"></a>
+        {{#each user}}
+            <div class="parallax-container valign-wrapper">
+                <div class="container">
+                    <div class="row center picture">
+                        <div class="col s12 m12 l12">
+                            <h1>{{this.usrName}}</h1>
+                            <a href="/users/{{this.id}}"><img src="{{this.photo}}" alt="profile-pic"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-
 
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l4 center age">
-                    <h4>{{age}}</h4>
+                    <h4>{{this.age}}</h4>
                 </div>
                 <div class="col s12  m12 l4 center personality">
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn" href="#modal1">{{personality}}</a>
+                    <a class="waves-effect waves-light btn" href="#modal1">{{this.personality}}</a>
 
                     <!-- Modal Structure -->
                   <div id="modal1" class="modal">
                       <div class="modal-content">
-                          <h4>{{this.personality}}</h4>
+                          <h4>personality types</h4>
                           <p>ISTJ
   Quiet, serious, earn success by thoroughness and dependability. Practical, matter-of-fact, realistic, and responsible. Decide logically what should be done and work toward it steadily, regardless of distractions. Take pleasure in making everything orderly and organized - their work, their home, their life. Value traditions and loyalty.
   ISFJ
@@ -149,31 +154,52 @@
                       </div>
                       <div class="modal-footer">
                           <a class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l4 center age">
+                        <h4>{{this.age}}</h4>
+                    </div>
+                    <div class="col s12  m12 l4 center personality"> -->
+                        <!-- Modal Trigger -->
+                        <!-- <a class="waves-effect waves-light btn" href="#modal1">{{this.personality}}</a> -->
+
+                        <!-- Modal Structure -->
+                        <!-- <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Modal Header</h4>
+                                <p>A bunch of text</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
+>>>>>>> 22_next_button
                         </div>
                     </div>
+                    <div class="col s12 m12 l4 center distance">
+                        <h4>Boulder, CO</h4>
+                    </div> -->
+                  </div>
                 </div>
-                <div class="col s12 m12 l4 center distance">
-                    <h4>Boulder, CO</h4>
+              </div>
+                </div>
+            </div>
+        {{/each}}
+        <div class="container hide">
+
+            <div class="row center">
+                <div class="col s12 m12 l12">
+                    <div class="icon-block">
+
+                        <!-- NOTE this submit button thing is weird. figure out soon -->
+                        <form class="submit" action="index.html" method="post">
+                            <a class="waves-effect waves-light btn" id="matches-button" href="/users"><i class="material-icons">navigate_before</i></a>
+                            <a class="waves-effect waves-light btn" id="matches-button" href="/users"><i class="material-icons">navigate_next</i></a>
+                        </form>
+                    </div>
+
                 </div>
             </div>
         </div>
-
-        <div class="container">
-
-                <div class="row center">
-                    <div class="col s12 m12 l12">
-                        <div class="icon-block">
-
-                          <!-- NOTE this submit button thing is weird. figure out soon -->
-                            <form class="submit" action="index.html" method="post">
-                                <a class="waves-effect waves-light btn" id="matches-button" href="/users"><i class="material-icons">navigate_before</i></a>
-                                <a class="waves-effect waves-light btn" id="matches-button" href="/users"><i class="material-icons">navigate_next</i></a>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
 
 
 
