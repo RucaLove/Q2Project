@@ -5,23 +5,34 @@ const humps = require('humps')
 
 // this one is to render the whole matches page
 router.get('/', (req, res, next) => {
-  // will need to check for a cookie to get the userID here
-  // for now I'm getting from 1
-  knex('user_saved_matches')
-    .where('user_saved_matches.user_id', 3)
-    .join('users', 'user_saved_matches.match_id', 'users.id')
-    .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
-    .then(match => {
-      let humpsMatch = humps.camelizeKeys(match)
-      res.render('matches', {
-        match: humpsMatch
-      })
-    })
-  // go into the database to render people
-  // go into user_saved_matches
-  // do we want to do both db here?
-  // confirm match view has correct name
-  // res.render('matches')
+    let pType = req.cookies.newUserPersonality.personality
+    // will need to check for a cookie to get the userID here
+    // for now I'm getting from 1
+    knex('user_saved_matches')
+        .where('user_saved_matches.user_id', 1)
+        .join('users', 'user_saved_matches.match_id', 'users.id')
+        .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
+        .then(match => {
+            let humpsMatch = humps.camelizeKeys(match)
+            // grabbing description of personality type
+            knex('personalities')
+                .select('description')
+                .where("type", pType)
+                .then((description) => {
+                    let humpsDesc = humps.camelizeKeys(description[0].description)
+                    res.render('matches', {
+                        match: humpsMatch,
+                        description: humpsDesc
+                    })
+                })
+        })
+
+
+    // go into the database to render people
+    // go into user_saved_matches
+    // do we want to do both db here?
+    // confirm match view has correct name
+    // res.render('matches')
 })
 
 // NOTE: this is being skipped because an href tag is directing to it in the matches view
