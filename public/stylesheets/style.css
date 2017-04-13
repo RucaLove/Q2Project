@@ -9,6 +9,11 @@ html {
   height: 100%;
 }
 
+.modal{
+  color: black;
+  font-size: 16px;
+}
+
 body {
   background: inherit;
 }
@@ -29,6 +34,10 @@ main {
   font-size: 2em;
 }
 
+#profImg{
+  width: 20em;
+}
+
 .matches {
   color: whitesmoke;
 }
@@ -36,6 +45,26 @@ main {
 .match-img {
   height: 4em;
   width: 4em;
+}
+
+img{
+  /*height: 10em;*/
+  width: 10em;
+}
+
+.btn{
+  background-color: #006AFF;
+  border: .5px solid;
+border-radius: 20px;
+font-size: 18px;
+}
+
+.btn:hover{
+  background-color: blue;
+}
+
+#testQ{
+  font-size: 18px;
 }
 
 #matches-button {
