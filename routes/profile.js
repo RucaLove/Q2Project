@@ -15,25 +15,30 @@ router.get('/', function(req, res, next) {
 
 router.get('/:id', (req, res, next) => {
   let id = +req.params.id
+  console.log('\nid at beggining of router.get/profile:id\n', id);
+  console.log(id);
+  console.log('typeof id is:\t', typeof id);
+
   // this one needs to go into the DB to get the info
   // set a cookie with the user personality
   // this cookie also needs to say they are a new user
 
   // NOTE think about transition from first time user making profile to here and how info gets passed on. cookie?
   knex('users')
-    .join('user_personality', 'users.id', 'user_personality.user_id')
-    .where('users.id', id)
+    .where('id', id)
     .then(function(user) {
+      console.log(user);
+      console.log(user[0]);
       // console.log(user);
       //not currently rendering age
       let registeredUser = humps.camelizeKeys(user[0])
       console.log(registeredUser);
       res.render('profile_view', {
-        // id: registeredUser.id,
+        id: registeredUser.id,
         age: registeredUser.age,
         bio: registeredUser.bio,
         photos: registeredUser.photos,
-        personality: registeredUser.personality
+        personality: 'ENTP'
       })
     })
 })
