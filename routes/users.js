@@ -15,7 +15,6 @@ router.get('/', function(req, res, next) {
   knex('users')
   .join('user_personality', 'users.id', 'user_personality.user_id')
     .then((user) => {
-      console.log(user);
       res.render('browse', {
         id: user[1].id,
         age: user[1].age,
@@ -33,7 +32,6 @@ router.get('/:id', (req, res, next) => {
   .join('user_personality', 'users.id', 'user_personality.user_id')
     .where('users.id', id)
     .then(user => {
-      console.log(user);
       let userHumps = humps.camelizeKeys(user[0])
 
       res.render('detail_view', {

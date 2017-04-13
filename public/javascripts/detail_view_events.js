@@ -16,8 +16,8 @@ let matchId = +$('#saveMatch').attr('data-id')
     dataType: 'json',
     data: {matchId: matchId},
     success: match => {
-      window.location.assign('/users')
       console.log(match);
+      window.location.assign('/users')
     },
     fail: error => {
       console.log(error);
