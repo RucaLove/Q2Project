@@ -52,6 +52,9 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/', (req, res, next) => {
   console.log("COOKIE", req.cookies.newUser);
+  let userEmail =  req.cookies.newUser.email
+  console.log(userEmail);
+  
   knex('users')
     .insert([{
       first_name: 'Sara',
