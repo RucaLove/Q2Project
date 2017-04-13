@@ -5,23 +5,13 @@ const humps = require('humps')
 /* GET users listing. */
 // read all users
 router.get('/', function(req, res, next) {
-  // res.render('about')
-
-  let count = 0
-
-
 
   // we still need to render their user_id somewhere on the page
   knex('users')
   .join('user_personality', 'users.id', 'user_personality.user_id')
     .then((user) => {
-      res.render('browse', {
-        id: user[1].id,
-        age: user[1].age,
-        username: user[1].usr_name,
-        photo: user[1].photo,
-        personality: user[1].personality
-      });
+      let camelUser = humps.camelizeKeys(user)
+      res.render('browse', {user: camelUser});
     })
 });
 
