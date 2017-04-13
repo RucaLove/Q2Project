@@ -79,7 +79,7 @@ function testAPI(accessToken) {
                     data: {
                         token: accessToken,
                         email: response.email,
-                        username: response.name,
+                        name: response.name,
                         id: response.id
                     }
                 })
@@ -88,7 +88,7 @@ function testAPI(accessToken) {
                     if (data) {
                         window.location = '/test'
                     } else {
-                        window.location = '/matches'
+                        window.location = '/test'
                     }
                 })
                 .fail((data) => {

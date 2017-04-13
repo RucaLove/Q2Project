@@ -5,11 +5,8 @@ const humps = require('humps')
 const boom = require('boom')
 
 router.get('/', function(req, res, next) {
-
-  let personality = req.cookies.newUserPersonality.personality
-  res.render('user_profile', {
-    personality: personality
-  })
+  
+  res.render('user_profile')
 
 })
 

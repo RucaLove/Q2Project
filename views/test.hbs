@@ -39,108 +39,120 @@
 <div id="fb-root"></div>
 <main>
 
-<body>
+    <body>
 
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '142942152904938',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
-      FB.AppEvents.logPageView();
-    };
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '142942152904938',
+                    xfbml: true,
+                    version: 'v2.8'
+                });
+                FB.AppEvents.logPageView();
+            };
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <header>
-      <nav>
-          <div class="nav-wrapper ">
-              <a href="#" class="brand-logo center">chemistri</a>
-          </div>
-      </nav>
-      <!-- slide out nav -->
-      <ul id="slide-out" class="side-nav">
-          <li>
-              <div class="userView">
-                  <div class="background">
-                      <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
-                  </div>
-                  <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
-                  <a href="#!name"><span class="white-text name">chemistri</span></a>
-              </div>
-          </li>
-          <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
-          <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
-          <li><a href="#" class="waves-effect"><i class="material-icons"></i>  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
-          <li>
-              <div class="divider"></div>
-          </li>
-
-
-      </ul>
-      <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
-      <!-- end of slide out nav -->
-  </header>
-  <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=142942152904938";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <header>
+            <nav>
+                <div class="nav-wrapper ">
+                    <a href="#" class="brand-logo center">chemistri</a>
+                </div>
+            </nav>
+            <!-- slide out nav -->
+            <ul id="slide-out" class="side-nav">
+                <li>
+                    <div class="userView">
+                        <div class="background">
+                            <img src="https://cdn.shutterstock.com/shutterstock/videos/13793207/thumb/1.jpg" alt="gears">
+                        </div>
+                        <a href="#!user"><img class="circle" src="https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Robot-512.png" alt="robot-head"></a>
+                        <a href="#!name"><span class="white-text name">chemistri</span></a>
+                    </div>
+                </li>
+                <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
+                <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
+                <li><a href="#" class="waves-effect"><i class="material-icons"></i>  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
 
 
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <h1>Take the Meyers Briggs Personality Test</h1>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons hamburger">menu</i></a>
+            <!-- end of slide out nav -->
+        </header>
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=142942152904938";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div class="container">
+            <div class="section">
+                <div class="row center">
+                  <h4>{{message}}{{name}}</h4>
+                  <button type="button" name="redirect"><a href="/profile/{{userid}}">{{testStatus}}</a></button>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <p>Question 1/50</p>
+        <div class="container">
+            <div class="section">
+                <div class="row center">
+                    <h1>Take the Meyers Briggs Personality Test</h1>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-
-                <!-- Insert question from json data here -->
-                <article>{{question}}</article>
-
-                <form class="" action="index.html" method="post">
-                    <button type="radio" name="button">Yes</button>
-                    <button type="radio" name="button">No</button>
-                </form>
+        <div class="container">
+            <div class="section">
+                <div class="row center">
+                    <p>Question 1/50</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container">
-        <div class="section">
-            <div class="row center">
-                <form class="submit" action="index.html" method="post">
-                    <button type="submit" name="button" class="btn btn-default profile"><a href="/result">Done</button>
-                </form>
+        <div class="container">
+            <div class="section">
+                <div class="row center">
 
+                    <!-- Insert question from json data here -->
+                    <article>{{question}}</article>
+
+                    <form class="" action="index.html" method="post">
+                        <button type="radio" name="button">Yes</button>
+                        <button type="radio" name="button">No</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- <div id="status"></div> -->
+
+        <div class="container">
+            <div class="section">
+                <div class="row center">
+                    <form class="submit" action="index.html" method="post">
+                        <button type="submit" name="button" class="btn btn-default profile"><a href="/result">Done</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div id="status"></div> -->
 
 </main>
 

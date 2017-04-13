@@ -24,12 +24,12 @@ router.post('/', (req, res, next) => {
         //  --this logic tells us user is 'newUser'
         // set cookie here
         // res.cookie('newUser', 'hey')
-        res.cookie('newUser', {new: true, email: req.body.email, token: req.body.token, id: req.body.id}, {httpOnly:true})
+        res.cookie('newUser', {new: true, email: req.body.email, token: req.body.token, id: req.body.id, name: req.body.name}, {httpOnly:true})
         res.json(true)
       } else {
         // if user has registered: filled out a profile on our app, then we store the following info:
         console.log('\n\nelse\n\n');
-        res.cookie('regUser', {new: false, id: user[0].id}, {httpOnly:true})
+        res.cookie('regUser', {new: false, email: req.body.email, token: req.body.token, id: req.body.id, name: req.body.name}, {httpOnly:true})
         res.json(false)
       }
     })
