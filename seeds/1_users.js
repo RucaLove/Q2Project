@@ -18,7 +18,7 @@ exports.seed = function(knex) {
           usr_name: 'SammZamm',
           lat: 40.068337,
           long: -105.1820337,
-          photo: 'https://www.facebook.com/photo.php?fbid=10209718362210655&set=t.1078410022&type=3&theater'
+          photo: '/Users/haleykalb/workspace/q2/Q2Project/public/img/Andrew1.jpg'
         },
         {
           id: 2,
@@ -34,7 +34,7 @@ exports.seed = function(knex) {
           usr_name: 'RucaLove',
           lat: 40.0228514,
           long: -105.2544565,
-          photo: 'https://www.facebook.com/photo.php?fbid=10103928666203455&set=a.806490888855.2461131.22426940&type=3&theater'
+          photo: 'https://images.search.yahoo.com/search/images;_ylt=AwrBT9LCBO9YmWoAKypXNyoA;_ylu=X3oDMTE0OTI1ODc3BGNvbG8DYmYxBHBvcwMxBHZ0aWQDQjM2MDRfMQRzZWMDcGl2cw--?p=bob+ross&fr2=piv-web&fr=spigot-chr-gcmac#id=0&iurl=http%3A%2F%2Fstatic2.businessinsider.com%2Fimage%2F563246309dd7cc25008c5b20%2Famazons-live-video-network-twitch-is-showing-every-episode-of-bob-ross-the-joy-of-painting-in-an-epic-marathon.jpg&action=click'
         },
         {
           id: 3,
@@ -50,7 +50,7 @@ exports.seed = function(knex) {
           usr_name: 'Nicowave',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/public/img/NicoWave1.jpg'
         },
         {
           id: 4,
@@ -66,7 +66,7 @@ exports.seed = function(knex) {
           usr_name: 'Gross',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Gross1.jpg'
         },
         {
           id: 5,

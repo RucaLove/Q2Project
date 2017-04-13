@@ -3,7 +3,11 @@ var router = express.Router();
 const knex = require('../knex')
 
 router.get('/', (req, res, next) => {
-  res.render('test');
+  knex('questions')
+  .then(questions => {
+    console.log(questions);
+    res.render('test', { questions: questions })
+  })
 })
 
 
