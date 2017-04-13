@@ -8,13 +8,15 @@ router.get('/', (req, res, next) => {
   // will need to check for a cookie to get the userID here
   // for now I'm getting from 1
   knex('user_saved_matches')
-  .where('user_saved_matches.user_id', 1)
-  .join('users', 'user_saved_matches.match_id', 'users.id')
-  .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
-  .then(match => {
-    let humpsMatch = humps.camelizeKeys(match)
-    res.render('matches', { match: humpsMatch })
-  })
+    .where('user_saved_matches.user_id', 1)
+    .join('users', 'user_saved_matches.match_id', 'users.id')
+    .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
+    .then(match => {
+      let humpsMatch = humps.camelizeKeys(match)
+      res.render('matches', {
+        match: humpsMatch
+      })
+    })
   // go into the database to render people
   // go into user_saved_matches
   // do we want to do both db here?
@@ -34,8 +36,19 @@ router.get('/', (req, res, next) => {
 
 // can this be an AJAX post request from the check-mark button to here?
 router.post('/', (req, res, next) => {
-  // this needs to
-  res.json(true)
+  let match = req.body.matchId
+  let user = req.cookies.regUser.id
+
+  knex('user_saved_matches')
+    .insert([{
+      'user_id': user,
+      'match_id': match
+    }], '*')
+    .then(done => {
+      res.json(true)
+    })
+
+
 
   // put chosen match in user_saved_matches table
   // get the user_id from the cookie
@@ -48,15 +61,15 @@ router.delete('/', (req, res, next) => {
   let id = +req.body.matchId
 
   knex('user_saved_matches')
-  .where('match_id', id)
-  .del()
-  .then(gone => {
+    .where('match_id', id)
+    .del()
+    .then(gone => {
       res.json(true)
-    console.log('deleted', gone)
-  })
-  .catch(err => {
-    res.json(false)
-  })
+      console.log('deleted', gone)
+    })
+    .catch(err => {
+      res.json(false)
+    })
 
 })
 
