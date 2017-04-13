@@ -117,16 +117,18 @@
 
     <div class="container">
         <div class="section">
+            {{#each questions}}
             <div class="row center">
 
                 <!-- Insert question from json data here -->
-                <article>{{question}}</article>
+                <article>{{this.question}}</article>
 
-                <form class="" action="index.html" method="post">
+                <!-- <form class="" action="index.html" method="post"> -->
                     <button type="radio" name="button">Yes</button>
                     <button type="radio" name="button">No</button>
-                </form>
+                <!-- </form> -->
             </div>
+            {{/each}}
         </div>
     </div>
 
