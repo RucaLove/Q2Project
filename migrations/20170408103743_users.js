@@ -15,6 +15,9 @@ exports.up = function(knex) {
   table.float('lat').notNullable().defaultTo(40.0150);
   table.float('long').notNullable().defaultTo(-105.2705);
   table.text('photo');
+  table.text('photo2');
+  table.text('photo3');
+  table.text('photo4');
   })
 };
 

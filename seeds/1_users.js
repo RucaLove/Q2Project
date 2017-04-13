@@ -14,11 +14,14 @@ exports.seed = function(knex) {
           age: 28,
           looking_for: true,
           interested_in: 2,
-          bio: 'I am Sam. I like climbing.',
+          bio: 'I am Sam. I created this app so that I can get a date. Want to go out with me yet?',
           usr_name: 'SammZamm',
           lat: 40.068337,
           long: -105.1820337,
-          photo: '/Users/haleykalb/workspace/q2/Q2Project/public/img/Andrew1.jpg'
+          photo: '/img/SammZamm1.jpg',
+          photo2: '/img/SammZamm2.jpg',
+          photo3: '/img/SammZamm3.jpg',
+          photo4: '/img/SammZamm4.jpg'
         },
         {
           id: 2,
@@ -30,11 +33,14 @@ exports.seed = function(knex) {
           age: 34,
           looking_for: false,
           interested_in: 1,
-          bio: 'I am the most amazing.',
+          bio: 'I am kind of a big deal.',
           usr_name: 'RucaLove',
           lat: 40.0228514,
           long: -105.2544565,
-          photo: 'https://images.search.yahoo.com/search/images;_ylt=AwrBT9LCBO9YmWoAKypXNyoA;_ylu=X3oDMTE0OTI1ODc3BGNvbG8DYmYxBHBvcwMxBHZ0aWQDQjM2MDRfMQRzZWMDcGl2cw--?p=bob+ross&fr2=piv-web&fr=spigot-chr-gcmac#id=0&iurl=http%3A%2F%2Fstatic2.businessinsider.com%2Fimage%2F563246309dd7cc25008c5b20%2Famazons-live-video-network-twitch-is-showing-every-episode-of-bob-ross-the-joy-of-painting-in-an-epic-marathon.jpg&action=click'
+          photo: '/img/RucaLove1.jpg',
+          photo2: '/img/RucaLove2.jpg',
+          photo3: '/img/RucaLove3.jpg',
+          photo4: '/img/RucaLove4.jpg'
         },
         {
           id: 3,
@@ -46,11 +52,14 @@ exports.seed = function(knex) {
           age: 28,
           looking_for: true,
           interested_in: 2,
-          bio: 'I drive a Subaru',
+          bio: 'I drive a Subaru.',
           usr_name: 'Nicowave',
           lat: 40.0207741,
           long: -105.277141,
-          photo: '/public/img/NicoWave1.jpg'
+          photo: '/img/NicoWave1.jpg',
+          photo2: '/img/NicoWave2.jpg',
+          photo3: '/img/NicoWave3.jpg',
+          photo4: '/img/NicoWave4.jpg'
         },
         {
           id: 4,
@@ -66,7 +75,10 @@ exports.seed = function(knex) {
           usr_name: 'Gross',
           lat: 40.0207741,
           long: -105.277141,
-          photo: '/img/Gross1.jpg'
+          photo: '/img/Gross1.jpg',
+          photo2: '/img/Gross2.jpg',
+          photo3: '/img/Gross3.jpg',
+          photo4: '/img/Gross4.jpg'
         },
         {
           id: 5,
@@ -82,7 +94,10 @@ exports.seed = function(knex) {
           usr_name: 'ChubbyBunny',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Ma1.jpg',
+          photo2: '/img/Ma2.jpg',
+          photo3: '/img/Ma3.jpg',
+          photo4: '/img/Ma4.jpg'
         },
         {
           id: 6,
@@ -98,7 +113,10 @@ exports.seed = function(knex) {
           usr_name: 'Craag',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Craag1.jpg',
+          photo2: '/img/Craag2.jpg',
+          photo3: '/img/Craag3.jpg',
+          photo4: '/img/Craag4.jpg'
         },
         {
           id: 7,
@@ -114,7 +132,10 @@ exports.seed = function(knex) {
           usr_name: 'Tiffany',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Wifey1.jpg',
+          photo2: '/img/Wifey2.jpg',
+          photo3: '/img/Wifey3.jpg',
+          photo4: '/img/Wifey4.jpg'
         },
         {
           id: 8,
@@ -130,39 +151,48 @@ exports.seed = function(knex) {
           usr_name: 'MulletMan',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Kelly1.jpg',
+          photo2: '/img/Kelly2.jpg',
+          photo3: '/img/Kelly3.jpg',
+          photo4: '/img/Kelly4.jpg'
         },
         {
           id: 9,
-          first_name: 'Summer',
-          last_name: 'Smith',
-          email: 'summersmith@gmail.com',
+          first_name: 'Leelah',
+          last_name: 'Joi',
+          email: 'leelahjoi@gmail.com',
           hashed_password: 'EFFEEAVAZCUOoBAAA097G5WMfuA2O3c2xFyk7QCfpYe9FZCpDyZCAhYRVg2YT15Q',
           gender: 2,
           age: 30,
           looking_for: false,
           interested_in: 1,
           bio: 'Is my perfect match out there?',
-          usr_name: 'Summer',
+          usr_name: 'Leelah',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Leelah1.jpg',
+          photo2: '/img/Leelah2.jpg',
+          photo3: '/img/Leelah3.jpg',
+          photo4: '/img/Leelah4.jpg'
         },
         {
           id: 10,
-          first_name: 'Kayti',
-          last_name: 'Trifecta',
-          email: 'kaytitrifecta@gmail.com',
+          first_name: 'Andrew',
+          last_name: 'Varnell',
+          email: 'andrewvarnell@gmail.com',
           hashed_password: 'EGGEEAVAZCUOoBAAA097G5WMfuA2O3c2xFyk7QCfpYe9FZCpDyZCAhYRVg2YT15Q',
-          gender: 2,
+          gender: 1,
           age: 25,
           looking_for: true,
-          interested_in: 1,
-          bio: 'I love cooking.',
-          usr_name: 'KaytiTrifecta',
+          interested_in: 2,
+          bio: 'I am a Galvanize alumni. I love coding.',
+          usr_name: 'Andy',
           lat: 40.0207741,
           long: -105.277141,
-          photo: 'https://www.facebook.com/photo.php?fbid=4694675884557&set=a.1427733133030.2050091.1223850753&type=3&theater'
+          photo: '/img/Andrew1.jpg',
+          photo2: '/img/Andrew2.jpg',
+          photo3: '/img/Andrew3.jpg',
+          photo4: '/img/Andrew4.jpg'
         }
       ]);
     })

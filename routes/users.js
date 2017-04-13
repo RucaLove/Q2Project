@@ -38,6 +38,9 @@ router.get('/:id', (req, res, next) => {
         id: userHumps.id,
         username: userHumps.usrName,
         photo: userHumps.photo,
+        photo2: userHumps.photo2,
+        photo3: userHumps.photo3,
+        photo4: userHumps.photo4,
         age: userHumps.age,
         bio: userHumps.bio,
         personality: userHumps.personality
