@@ -71,38 +71,16 @@ $( document ).ready(function() {
                 .done((data) => {
 
                   if (data) {
-                    location.reload()
-                //     window.location = '/test'
-                //   } else {
-                //     window.location = '/matches'
+                    window.location = '/test'
+                  } else {
+                    window.location = '/matches'
                   }
                 })
                 .fail((data) =>{
                   console.log('\n\nregistered user\n\n');
                 })
             // NOTE uncomment the code below for index.hbs
-            document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
+            // document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
         })
     }
-
-
-      // window.fbAsyncInit = function() {
-      //   FB.init({
-      //     appId      : '142942152904938',
-      //     xfbml      : true,
-      //     version    : 'v2.8'
-      //   });
-      //   FB.AppEvents.logPageView();
-      // };
-      //
-      // (function(d, s, id){
-      //    var js, fjs = d.getElementsByTagName(s)[0];
-      //    if (d.getElementById(id)) {return;}
-      //    js = d.createElement(s); js.id = id;
-      //    js.src = "//connect.facebook.net/en_US/sdk.js";
-      //    fjs.parentNode.insertBefore(js, fjs);
-      //  }(document, 'script', 'facebook-jssdk'));
-
-
-
 })
