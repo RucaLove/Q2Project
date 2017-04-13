@@ -135,7 +135,6 @@
                 <div class="col s12 m6">
                     <div class="icon-block">
                         <h5 class="center">Age</h5>
-                        <form action="/action_page.php">
                             <input type="number" id="editAge" name="quantity" min="0" max="110" step="1" value="{{age}}" id="age">
                             <!-- </form> -->
                     </div>
@@ -168,8 +167,7 @@
         <div class="section">
             <div class="row center">
                 <!-- <form class="submit" action="index.html" method="post"> -->
-                <a class="waves-effect waves-light btn" id="editProfile">edit</a>
-                </form>
+                <a class="waves-effect waves-light btn" id="editProfile" data-user-id="{{id}}">edit</a>
             </div>
         </div>
     </div>
