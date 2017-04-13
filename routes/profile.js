@@ -35,7 +35,7 @@ router.get('/:id', (req, res, next) => {
         id: user[0].id,
         age: user[0].age,
         bio: user[0].bio,
-        photos: user[0].photos,
+        photo: user[0].photo,
         personality: user[0].personality
       })
     })
