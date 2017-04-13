@@ -71,16 +71,17 @@ $( document ).ready(function() {
                 .done((data) => {
 
                   if (data) {
-                    window.location = '/test'
-                  } else {
-                    window.location = '/matches'
+                    location.reload()
+                //     window.location = '/test'
+                //   } else {
+                //     window.location = '/matches'
                   }
                 })
                 .fail((data) =>{
                   console.log('\n\nregistered user\n\n');
                 })
             // NOTE uncomment the code below for index.hbs
-            // document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
+            document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!'
         })
     }
 
