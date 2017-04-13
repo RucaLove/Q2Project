@@ -36,7 +36,7 @@
 <body>
 
   <!-- tag and div that NEED to be on every page that runs FBAuth -->
-  <div id="fb-root"></div>
+  <!-- <div id="fb-root"></div>
   <script>
     window.fbAsyncInit = function() {
       FB.init({
@@ -54,7 +54,7 @@
        js.src = "//connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-  </script>
+  </script> -->
 
   <header>
       <nav>
@@ -203,7 +203,7 @@
                 <div class="row center">
                   <!-- NOTE PROBLEMS -->
                   <!-- <form class="submit" action="index.html" method="post"> -->
-                    <button type="submit" name="action" action="/profile" class="btn btn-default">Done</button>
+                    <button type="submit" name="action" action="/profile" method="POST" class="btn btn-default">Done</button>
                   </form>
                 </div>
         </div>

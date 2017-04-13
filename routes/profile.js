@@ -7,9 +7,9 @@ const boom = require('boom')
 router.get('/', function(req, res, next) {
 
   let personality = req.cookies.newUserPersonality.personality
-  // res.render('user_profile', {
-  //   personality: personality
-  // })
+  res.render('user_profile', {
+    personality: personality
+  })
 
 })
 
@@ -21,8 +21,6 @@ router.get('/:id', (req, res, next) => {
   // this one needs to go into the DB to get the info
   // set a cookie with the user personality
   // this cookie also needs to say they are a new user
-
-
 
   // NOTE think about transition from first time user making profile to here and how info gets passed on. cookie?
   knex('users')
@@ -39,15 +37,6 @@ router.get('/:id', (req, res, next) => {
         personality: user[0].personality
       })
     })
-
-  // PROBABLY DON'T NEED THIS
-  // knex('user_personality')
-  //   .orderBy('id', req.params.id)
-  //   .then((personality) => {
-  //     res.send(humps.camelizeKeys(personality[0]));
-  //     console.log('HAY', personality);
-  //   })
-  // res.render('user_profile')
 })
 
 router.post('/', (req, res, next) => {
