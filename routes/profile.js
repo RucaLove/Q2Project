@@ -5,7 +5,7 @@ const humps = require('humps')
 const boom = require('boom')
 
 router.get('/', function(req, res, next) {
-  
+
   res.render('user_profile')
 
 })
@@ -23,15 +23,17 @@ router.get('/:id', (req, res, next) => {
   knex('users')
     .join('user_personality', 'users.id', 'user_personality.user_id')
     .where('users.id', id)
-    .then(user => {
+    .then(function(user) {
       // console.log(user);
       //not currently rendering age
+      let registeredUser = humps.camelizeKeys(user[0])
+      console.log(registeredUser);
       res.render('profile_view', {
-        id: user[0].id,
-        age: user[0].age,
-        bio: user[0].bio,
-        photos: user[0].photos,
-        personality: user[0].personality
+        // id: registeredUser.id,
+        age: registeredUser.age,
+        bio: registeredUser.bio,
+        photos: registeredUser.photos,
+        personality: registeredUser.personality
       })
     })
 })
