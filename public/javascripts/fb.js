@@ -78,6 +78,7 @@ $( document ).ready(function() {
                   }
                 })
                 .fail((data) =>{
+                  location.reload()
                   console.log('\n\nregistered user\n\n');
                 })
             // NOTE uncomment the code below for index.hbs
