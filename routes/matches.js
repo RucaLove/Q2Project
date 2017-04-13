@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
     // will need to check for a cookie to get the userID here
     // for now I'm getting from 1
     knex('user_saved_matches')
-        .where('user_saved_matches.user_id', 1)
+        .where('user_saved_matches.user_id', 3)
         .join('users', 'user_saved_matches.match_id', 'users.id')
         .join('user_personality', 'user_personality.user_id', 'user_saved_matches.match_id')
         .then(match => {
