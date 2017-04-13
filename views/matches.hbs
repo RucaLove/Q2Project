@@ -52,9 +52,11 @@
                 <a href="#!name"><span class="white-text name">chemistri</span></a>
             </div>
         </li>
-        <li><a href="order.html" class="waves-effect"><i class="material-icons"></i>Order</a></li>
-        <li><a href="index.html" class="waves-effect"><i class="material-icons"></i>About</a></li>
-        <li><a href="#" class="waves-effect"><i class="material-icons"></i><div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div></a></li>
+        <li><a href="/profile" class="waves-effect">profile</a></li>
+        <li><a href="/users" class="waves-effect">browse</a></li>
+        <li><a href="/matches" class="waves-effect"></i>matches</a></li>
+        <li><a href="/profile" class="waves-effect"></i>profile</a></li>
+        <li><a href="/" class="waves-effect"></i>logout</a></li>
         <li>
             <div class="divider"></div>
         </li>
@@ -66,30 +68,8 @@
 </header>
 
 <!-- tag and div that NEED to be on every page that runs FBAuth -->
-<div id="fb-root"></div>
 
 <body>
-
-
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '142942152904938',
-        xfbml      : true,
-        version    : 'v2.8'
-      });
-      FB.AppEvents.logPageView();
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-
     <main>
         <h1 class="matches center">your matches</h1>
 
